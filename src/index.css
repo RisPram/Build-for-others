@@ -7,3 +7,56 @@
   padding:0;
   box-sizing: border-box;
 }
+body {
+  
+  overflow-y: scroll !important;
+ 
+ }
+ h1 {
+        font-size: 36px !important;
+        line-height: 49px !important;
+    }
+   
+ h2 {
+        font-size: 32px !important;
+        line-height: 43px !important;
+    }
+   
+ h3 {
+        font-size: 30px !important;
+        line-height: 40.92px !important;
+    }
+   
+ h4 {
+        font-size: 26px !important;
+        line-height: 35px !important;
+    }
+   
+ h5 {
+        font-size: 22px !important;
+        line-height: 30px !important;
+    }
+   
+ h6{
+     font-size: 18px !important;
+        line-height: 26px !important;
+    }
+ 
+ ::-webkit-scrollbar {
+     width: 5px;
+     height: 3px;
+ }
+ 
+ ::-webkit-scrollbar-track {
+     border-radius: 10px;
+ }
+ 
+ ::-webkit-scrollbar-thumb {
+     background: #b5b5b5;
+     border-radius: 10px;
+ }
+ 
+ ::-webkit-scrollbar-thumb:hover {
+     background: #153865;
+ }
+ 

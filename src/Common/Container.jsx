@@ -1,8 +1,10 @@
-const Container = ({ children }) => {
+const Container = ({ inner, children }) => {
   return (
-    <section className={`w-full flex items-center justify-center bg-gray-800`}>
+    <section className={`w-full flex items-center justify-center bg-baseColor`}>
       <section
-        className={`w-[90%] md:w-[75%] flex items-center flex-col bg-yellow-50`}
+        className={`w-[90%] md:w-[75%] py-8 flex flex-col bg-baseColor ${
+          inner ?? ""
+        }`}
       >
         {children}
       </section>

@@ -1,13 +1,13 @@
-const Container = ({ outer, inner, children }) => {
+const Container = ({ outer, inner, children, segment }) => {
   return (
     <section
-      className={`w-full flex items-center justify-center bg-baseColor ${
+      className={`w-full flex items-center justify-center  ${
         outer ?? ""
-      }`}
+      } bg-baseColor`}
     >
       <section
-        className={`w-[90%] md:w-[75%] py-8 flex flex-col bg-baseColor ${
-          inner ?? ""
+        className={`w-[90%] md:w-[75%] flex flex-col  ${inner ?? ""} ${
+          segment === "header" ? "bg-baseColor" : "bg-transparent"
         }`}
       >
         {children}

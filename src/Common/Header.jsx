@@ -1,17 +1,27 @@
 import { useState } from "react";
-import Container from "../Common/Container";
-import { menu } from "../Common/RealData";
+import { useNavigate } from "react-router-dom";
+
+import Container from "./Container";
+import { menu } from "./RealData";
 import { logo } from "../Assets";
 const Header = () => {
+  const navigate = useNavigate();
+
   const [state, setState] = useState({
     selectedTab: "menuA",
   });
   return (
-    // <div>header</div>
-    <Container>
-      <nav className="flex w-full h-[60px] sticky top-0 z-50">
-        <figure className="w-[10%]">
-          <img src={logo} alt="logo" className="object-contain w-full h-full" />
+    <Container outer="sticky top-0 z-50">
+      <nav className="flex w-full h-[60px]">
+        <figure className="w-[10%] flex items-start">
+          <img
+            src={logo}
+            alt="logo"
+            className="object-contain w-full h-full cursor-pointer"
+            onClick={() => {
+              navigate("/");
+            }}
+          />
         </figure>
         <section className="w-[90%] flex items-center justify-end">
           <section className=" w-fit bg-[#3a3939] flex p-2 rounded-[30px]">
@@ -28,6 +38,7 @@ const Header = () => {
                     setState((prev) => {
                       return { ...prev, selectedTab: d?.id };
                     });
+                    navigate(`${d?.link}`);
                   }}
                 >
                   {d?.title}

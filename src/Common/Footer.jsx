@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import Container from "../Common/Container";
-import { menu, socialMedia } from "../Common/RealData";
+import { useNavigate } from "react-router-dom";
+import Container from "./Container";
+import { menu, socialMedia } from "./RealData";
 const Footer = () => {
+  const navigate = useNavigate();
+
   const [state, setState] = useState({
-    selectedTab: "menuA",
+    selectedTab: "",
   });
   return (
     <>
@@ -15,13 +18,15 @@ const Footer = () => {
               return (
                 <p
                   key={i}
-                  className={`py-2 text-[#C1C1C1] cursor-pointer ${
+                  className={`py-2 text-[#C1C1C1] cursor-pointer hover:underline  ${
                     state.selectedTab === d?.id ? "underline" : ""
                   }`}
                   onClick={() => {
                     setState((prev) => {
                       return { ...prev, selectedTab: d?.id };
                     });
+                    window.scroll({ top: 0, left: 0, behavior: "smooth" });
+                    navigate(`${d?.link}`);
                   }}
                 >
                   {d?.title}{" "}

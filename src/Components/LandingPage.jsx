@@ -1,12 +1,9 @@
 import Container from "../Common/Container";
-import Header from "./Header";
 import { skills } from "../Common/RealData";
 import MyProject from "./MyWork";
-import Footer from "./Footer";
 const LandingPage = () => {
   return (
     <>
-      <Header />
       <Container inner="my-14 items-center">
         <h1 className="!text-6xl w-[80%]">
           <span className="text-[#fff] leading-snug">
@@ -52,7 +49,6 @@ const LandingPage = () => {
 
       {/* my project */}
       <MyProject />
-      <Footer />
     </>
   );
 };

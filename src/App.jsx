@@ -1,8 +1,22 @@
 import { useState } from "react";
-import LandingPage from "./Components/LandingPage";
+import {
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+} from "react-router-dom";
+import AllRoutes from "./routes";
+
+const router = createBrowserRouter(
+  createRoutesFromElements(<Route path="/*" element={<AllRoutes />}></Route>)
+);
 
 function App() {
-  return <LandingPage />;
+  return (
+    <main>
+      <RouterProvider router={router} />
+    </main>
+  );
 }
 
 export default App;

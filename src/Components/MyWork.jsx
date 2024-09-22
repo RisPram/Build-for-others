@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import { iconLink } from "../Assets";
 import { myProject } from "../Common/RealData";
 import Container from "../Common/Container";
 const MyProject = () => {
+  const navigate = useNavigate();
   return (
     <Container>
       {myProject?.map((d, i) => {
@@ -19,9 +21,16 @@ const MyProject = () => {
                 {d?.type}
               </p>
               <h3 className="py-3 font-bold text-5xl">{d?.title}</h3>
-              <p className="py-3 text-xl">{d?.description}</p>
-              <p className="py-3 flex items-start justify-center text-xl cursor-pointer">
-                See My Work{" "}
+              <p className="py-3 text-xl whitespace-pre-line">
+                {d?.description}
+              </p>
+              <p
+                className="py-3 flex items-start justify-center text-xl cursor-pointer group"
+                onClick={() => {
+                  navigate(`/project-details/${d?.slug}`);
+                }}
+              >
+                <span className="group-hover:underline">See My Work</span>
                 <img src={iconLink} alt="link" className="ml-2 w-8 h-8" />
               </p>
             </section>

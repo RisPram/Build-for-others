@@ -5,7 +5,7 @@ import Container from "../Common/Container";
 const MyProject = () => {
   const navigate = useNavigate();
   return (
-    <Container>
+    <Container inner="py-20">
       {myProject?.map((d, i) => {
         return (
           <section

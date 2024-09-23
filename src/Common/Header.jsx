@@ -10,21 +10,10 @@ const Header = () => {
   const [state, setState] = useState({
     selectedTab: "menuA",
   });
+
   return (
-    <Container
-      segment="header"
-      outer="sticky top-0 z-50
-   h-[60px] w-full bg-black rounded-md bg-clip-padding
-       backdrop-filter backdrop-blur-sm bg-opacity-10
-    "
-      inner="w-full  rounded-md bg-clip-padding bg-black
-       backdrop-filter backdrop-blur-sm bg-opacity-10"
-    >
+    <Container segment="header">
       <nav className="flex w-full h-full">
-        {/* <nav
-        className=" h-[60px] w-full bg-yellow-400 rounded-md bg-clip-padding
-       backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100"
-      > */}
         <figure className="w-[10%] flex items-start">
           <img
             src={logo}
@@ -37,10 +26,8 @@ const Header = () => {
         </figure>
         <section className="w-[90%] flex items-center justify-end">
           <section
-            className=" w-fit bg-[#3a3939] flex p-2 rounded-[30px]
-           bg-clip-padding
-       backdrop-filter backdrop-blur-sm bg-opacity-10
-          "
+            className=" w-fit bg-[#3a3939]/60 flex p-2 rounded-[30px]
+          backdrop-blur-sm "
           >
             {menu?.map((d, i) => {
               return (

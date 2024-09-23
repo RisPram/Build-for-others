@@ -1,9 +1,11 @@
 import Container from "../Common/Container";
 import { skills } from "../Common/RealData";
+import ScrollToTopOfPage from "../Common/ScrollToTopOfPage";
 import MyProject from "./MyWork";
 const LandingPage = () => {
   return (
     <>
+      <ScrollToTopOfPage />
       <Container inner="my-14 items-center">
         <h1 className="!text-6xl w-[80%]">
           <span className="text-[#fff] leading-snug">

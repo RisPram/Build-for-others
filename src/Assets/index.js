@@ -17,6 +17,9 @@ import bsideE from "./images/Bside/bsideE.png";
 
 //project-details
 import pImg from "./images/ProductDetails/problemImage.png";
+
+//homepage about me
+import homepageA from "./images/AboutMe/homepageA.png";
 export {
   logo,
   myProject1,
@@ -34,4 +37,5 @@ export {
   bsideD,
   bsideE,
   mode,
+  homepageA,
 };

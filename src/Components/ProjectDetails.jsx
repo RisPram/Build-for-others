@@ -5,7 +5,7 @@ import Container from "../Common/Container";
 import { myProject, projectDetails } from "../Common/RealData";
 import ScrollToTopOfPage from "../Common/ScrollToTopOfPage";
 
-const ProjectDetails = () => {
+const ProjectDetails = ({ whiteMode }) => {
   const params = useParams();
   const navigate = useNavigate();
 
@@ -19,9 +19,7 @@ const ProjectDetails = () => {
   });
 
   const handleClickScroll = (target) => {
-    console.log("target>>", target);
     const elementA = document.getElementById(target);
-    console.log("elementA>>", elementA);
     if (elementA) {
       // 👇 Will scroll smoothly to the top of the next section
       elementA.scrollIntoView({ behavior: "smooth" });
@@ -30,7 +28,7 @@ const ProjectDetails = () => {
   return (
     <>
       <ScrollToTopOfPage />
-      <Container>
+      <Container whiteMode={whiteMode}>
         {/* particular project details */}
         {/* introdetails part1 */}
         <section className="flex items-center justify-center">
@@ -47,7 +45,11 @@ const ProjectDetails = () => {
                   />
                 </figure>
                 <section className="w-full mx-auto">
-                  <p className="py-6 text-4xl font-bold text-[#fff]">
+                  <p
+                    className={`py-6 text-4xl font-bold ${
+                      whiteMode ? "text-[#101010]" : "text-[#fff]"
+                    }`}
+                  >
                     {d?.title}
                   </p>
                   <hr />
@@ -58,7 +60,13 @@ const ProjectDetails = () => {
                           <span className="py-1 text-[#707070] font-semibold">
                             {x?.title}
                           </span>
-                          <span className=" text-[#fff]">{x?.details}</span>
+                          <span
+                            className={`${
+                              whiteMode ? "text-[#101010]" : "text-[#fff]"
+                            }`}
+                          >
+                            {x?.details}
+                          </span>
                         </p>
                       );
                     })}
@@ -83,10 +91,17 @@ const ProjectDetails = () => {
                         return { ...prev, selectedTab: d?.title };
                       });
                     }}
-                    className={`py-3 text-2xl cursor-pointer duration-200 hover:text-[#fff] font-semibold
+                    className={`py-3 text-2xl cursor-pointer duration-200 font-semibold
+                        ${
+                          whiteMode
+                            ? "hover:text-[#525155]"
+                            : "hover:text-[#fff]"
+                        }
                         ${
                           state.selectedTab === d?.title
-                            ? "text-[#fff]"
+                            ? whiteMode
+                              ? "text-[#101010]"
+                              : "text-[#fff]"
                             : "text-[#a1a1a1]"
                         }
                         `}
@@ -104,7 +119,9 @@ const ProjectDetails = () => {
               {specificList[0]?.details?.map((d, i) => {
                 return (
                   <section
-                    className="py-8 flex flex-col text-[#fff]"
+                    className={`py-8 flex flex-col ${
+                      whiteMode ? "text-[ #525155]" : "text-[#fff]"
+                    }`}
                     key={i}
                     id={`${d?.id}`}
                   >
@@ -132,7 +149,11 @@ const ProjectDetails = () => {
         </section>
 
         {/* more to explore */}
-        <h2 className="font-semibold text-[#fff] !text-5xl my-20 pt-10">
+        <h2
+          className={`font-semibold ${
+            whiteMode ? "text-[#101010]" : "text-[#fff]"
+          } !text-5xl my-20 pt-10`}
+        >
           More to explore
         </h2>
         <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 mb-20">
@@ -147,17 +168,26 @@ const ProjectDetails = () => {
                   />
                 </figure>
                 <p className="py-3 !text-[#707070] text-xl">{d?.type}</p>
-                <h3 className="py-3 font-bold text-[#fff] text-5xl">
+                <h3
+                  className={`py-3 font-bold ${
+                    whiteMode ? "text-[#101010]" : "text-[#fff]"
+                  } text-5xl`}
+                >
                   {d?.title}
                 </h3>
 
                 <p
                   className="py-3 flex items-start justify-center text-xl cursor-pointer group"
                   onClick={() => {
+                    window.scroll({ top: 0, left: 0, behavior: "smooth" });
                     navigate(`/project-details/${d?.slug}`);
                   }}
                 >
-                  <span className="group-hover:underline text-[#D1D1D1]">
+                  <span
+                    className={`group-hover:underline 
+                    ${whiteMode ? "text-[#525155]" : "text-[#D1D1D1]"}
+                    `}
+                  >
                     See My Work
                   </span>
                   <img src={iconLink} alt="link" className="ml-2 w-8 h-8" />

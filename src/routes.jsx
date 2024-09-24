@@ -4,23 +4,24 @@ import ProjectDetails from "./Components/ProjectDetails";
 import AboutMe from "./Components/AboutMe";
 import Business from "./Components/Business";
 
-const AllRoutes = () => {
+const AllRoutes = ({ whiteMode }) => {
+  console.log("in routes>", whiteMode);
   let routes = useRoutes([
     {
       path: "/",
-      element: <LandingPage />,
+      element: <LandingPage whiteMode={whiteMode} />,
     },
     {
       path: "/project-details/:key",
-      element: <ProjectDetails />,
+      element: <ProjectDetails whiteMode={whiteMode} />,
     },
     {
       path: "/about",
-      element: <AboutMe />,
+      element: <AboutMe whiteMode={whiteMode} />,
     },
     {
       path: "/business",
-      element: <Business />,
+      element: <Business whiteMode={whiteMode} />,
     },
 
     // {

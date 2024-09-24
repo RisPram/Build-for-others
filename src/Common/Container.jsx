@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
-const Container = ({ outer, inner, children, segment }) => {
+const Container = ({ whiteMode, outer, inner, children, segment }) => {
+  console.log("in container>", whiteMode);
+
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const handleScroll = () => {
@@ -15,20 +17,21 @@ const Container = ({ outer, inner, children, segment }) => {
     };
   }, []);
 
-  //   console.log("dcd>>", scrollPosition);
   return (
     <section
       className={`relative w-full flex items-center justify-center   ${
         outer ?? ""
       }
- backdrop-blur-none
+ 
          ${segment === "header" ? "sticky top-0 z-50" : ""}
     ${
       segment === "header" && scrollPosition >= 50
         ? "bg-transparent backdrop-blur-sm"
-        : "bg-black backdrop-blur-none"
+        : whiteMode
+        ? "bg-whiteMode"
+        : "bg-baseColor backdrop-blur-none"
     }
-    bg-baseColor
+     duration-300
      `}
     >
       <section

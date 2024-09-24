@@ -2,10 +2,10 @@ import { useNavigate } from "react-router-dom";
 import { iconLink } from "../Assets";
 import { myProject } from "../Common/RealData";
 import Container from "../Common/Container";
-const MyProject = () => {
+const MyProject = ({ whiteMode }) => {
   const navigate = useNavigate();
   return (
-    <Container inner="py-20">
+    <Container whiteMode={whiteMode} inner="py-20">
       {myProject?.map((d, i) => {
         return (
           <section
@@ -13,19 +13,31 @@ const MyProject = () => {
             className="grid grid-cols-1 md:grid-cols-2 my-10 gap-14"
           >
             <section
-              className={`flex items-start justify-center flex-col text-[#fff] ${
+              className={`flex items-start justify-center flex-col  ${
                 i % 2 == 0 ? "order-1" : "order-2"
               }`}
             >
               <p className="mb-2 py-3 !text-black font-semibold bg-babyGreen rounded-[30px] w-fit px-6 text-xl">
                 {d?.type}
               </p>
-              <h3 className="py-3 font-bold text-6xl">{d?.title}</h3>
-              <p className="py-3 text-2xl whitespace-pre-line">
+              <h3
+                className={`py-3 font-bold text-6xl ${
+                  whiteMode ? "text-[#101010]" : "text-[#fff]"
+                }`}
+              >
+                {d?.title}
+              </h3>
+              <p
+                className={`py-3 text-2xl whitespace-pre-line ${
+                  whiteMode ? "text-[#525155]" : "text-[#D1D1D1]"
+                }`}
+              >
                 {d?.description}
               </p>
               <p
-                className="py-3 flex items-start justify-center text-xl cursor-pointer group"
+                className={`py-3 flex items-start justify-center text-xl cursor-pointer group  ${
+                  whiteMode ? "text-[#525155]" : "text-[#D1D1D1]"
+                }`}
                 onClick={() => {
                   navigate(`/project-details/${d?.slug}`);
                 }}

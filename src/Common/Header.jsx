@@ -12,7 +12,7 @@ const Header = ({ handleModeChange }) => {
   });
 
   return (
-    <Container segment="header">
+    <Container segment="header" whiteMode={state?.mode}>
       <nav className="flex w-full h-full">
         <figure className="w-[10%] flex items-start">
           <img
@@ -58,6 +58,9 @@ const Header = ({ handleModeChange }) => {
             className="object-contain w-[50px] h-[50px] cursor-pointer"
             onClick={() => {
               handleModeChange(!state.mode);
+              setState((prev) => {
+                return { ...prev, mode: !state.mode };
+              });
             }}
           />
         </figure>

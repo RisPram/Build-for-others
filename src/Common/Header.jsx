@@ -3,11 +3,12 @@ import { useNavigate } from "react-router-dom";
 import Container from "./Container";
 import { menu } from "./RealData";
 import { logo, mode } from "../Assets";
-const Header = () => {
+const Header = ({ handleModeChange }) => {
   const navigate = useNavigate();
 
   const [state, setState] = useState({
     selectedTab: "menuA",
+    mode: false,
   });
 
   return (
@@ -55,6 +56,9 @@ const Header = () => {
             src={mode}
             alt="mode"
             className="object-contain w-[50px] h-[50px] cursor-pointer"
+            onClick={() => {
+              handleModeChange(!state.mode);
+            }}
           />
         </figure>
       </nav>

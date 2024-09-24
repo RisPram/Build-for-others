@@ -1,14 +1,13 @@
-import { useState } from "react";
 import {
   Route,
   createBrowserRouter,
   createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
-import AllRoutes from "./routes";
+import Index from ".";
 
 const router = createBrowserRouter(
-  createRoutesFromElements(<Route path="/*" element={<AllRoutes />}></Route>)
+  createRoutesFromElements(<Route path="/*" element={<Index />}></Route>)
 );
 
 function App() {

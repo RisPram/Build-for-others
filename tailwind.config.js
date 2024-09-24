@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         baseColor: "#090909",
+        whiteMode: "#fff",
         babyGreen: "#8CFF9E",
       },
       animation: {

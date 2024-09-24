@@ -3,8 +3,7 @@ import LandingPage from "./Components/LandingPage";
 import ProjectDetails from "./Components/ProjectDetails";
 import AboutMe from "./Components/AboutMe";
 import Business from "./Components/Business";
-import Header from "./Common/Header";
-import Footer from "./Common/Footer";
+
 const AllRoutes = () => {
   let routes = useRoutes([
     {
@@ -30,12 +29,6 @@ const AllRoutes = () => {
     // },
   ]);
 
-  return (
-    <>
-      <Header />
-      {routes}
-      <Footer />
-    </>
-  );
+  return routes;
 };
 export default AllRoutes;

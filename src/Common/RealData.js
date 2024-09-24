@@ -6,6 +6,7 @@ import {
   linkedIn,
   twitter,
   pImg,
+  resume,
 } from "../Assets";
 export const menu = [
   {
@@ -26,7 +27,7 @@ export const menu = [
   {
     id: "menuD",
     title: "Resume",
-    link: "",
+    download: resume,
   },
 ];
 export const skills = [

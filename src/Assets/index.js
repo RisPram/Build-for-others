@@ -1,3 +1,6 @@
+import whiteMode from "./images/whiteMode.png";
+import darkMode from "./images/darkMode.png";
+
 import logo from "./images/logo.png";
 import myProject1 from "./images/myProject1.png";
 import myProject2 from "./images/myProject2.png";
@@ -20,7 +23,13 @@ import pImg from "./images/ProductDetails/problemImage.png";
 
 //homepage about me
 import homepageA from "./images/AboutMe/homepageA.png";
+
+// resume
+import resume from "../Assets/samplepdf.pdf";
+
 export {
+  whiteMode,
+  darkMode,
   logo,
   myProject1,
   myProject2,
@@ -38,4 +47,5 @@ export {
   bsideE,
   mode,
   homepageA,
+  resume,
 };

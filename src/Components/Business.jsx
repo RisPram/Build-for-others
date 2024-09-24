@@ -13,12 +13,7 @@ const Business = ({ whiteMode }) => {
         <section className="grid py-10 grid-cols-[30%_33%_33%] gap-[2%] grid-rows-[450px_350px_400px]">
           {arrImages?.map((d, i) => {
             return (
-              <figure
-                className={`w-full border-2 ${
-                  whiteMode ? "border-white" : "border-black"
-                } ${arrangement[i]}`}
-                key={i}
-              >
+              <figure className={`w-full ${arrangement[i]}`} key={i}>
                 {i !== 2 && (
                   <img
                     src={d}

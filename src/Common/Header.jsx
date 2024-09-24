@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Container from "./Container";
 import { menu } from "./RealData";
-import { logo, mode } from "../Assets";
+import { logo, mode, whiteMode, darkMode } from "../Assets";
 const Header = ({ handleModeChange }) => {
   const navigate = useNavigate();
 
@@ -42,7 +42,14 @@ const Header = ({ handleModeChange }) => {
                     setState((prev) => {
                       return { ...prev, selectedTab: d?.id };
                     });
-                    navigate(`${d?.link}`);
+
+                    d?.id !== "menuD"
+                      ? navigate(`${d?.link}`)
+                      : window.open(
+                          d?.download,
+                          "_blank",
+                          "toolbar=yes, location=yes, status=yes, menubar=yes, scrollbars=yes"
+                        );
                   }}
                 >
                   {d?.title}
@@ -51,11 +58,11 @@ const Header = ({ handleModeChange }) => {
             })}
           </section>
         </section>
-        <figure className="ml-2 w-[5%] flex items-center justify-center">
+        <figure className=" ml-2 w-[5%] flex items-center justify-center">
           <img
-            src={mode}
+            src={state?.mode ? whiteMode : darkMode}
             alt="mode"
-            className="object-contain w-[50px] h-[50px] cursor-pointer"
+            className="duration-200 object-contain w-[40px] h-[40px] cursor-pointer bg-white rounded-full p-1.5"
             onClick={() => {
               handleModeChange(!state.mode);
               setState((prev) => {

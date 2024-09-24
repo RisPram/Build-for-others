@@ -57,7 +57,7 @@ const LandingPage = ({ whiteMode }) => {
               <p
                 key={i}
                 className={`my-3 px-10 py-4 mx-3 text-xl rounded-[30px] border-2 border-[#707070]  ${
-                  whiteMode ? "text-black" : "text-[#fff"
+                  whiteMode ? "text-black" : "text-[#fff]"
                 } font-semibold cursor-pointer
               hover:bg-babyGreen hover:rounded-xl hover:-rotate-[10deg] hover:text-black duration-300`}
               >
@@ -76,7 +76,7 @@ const LandingPage = ({ whiteMode }) => {
               <p
                 key={i}
                 className={`my-3 px-10 py-4 mx-3 text-xl rounded-[30px] border-2 border-[#707070] ${
-                  whiteMode ? "text-black" : "text-[#fff"
+                  whiteMode ? "text-black" : "text-[#fff]"
                 } font-semibold cursor-pointer
               hover:bg-babyGreen hover:rounded-xl hover:-rotate-[10deg] hover:text-black duration-300`}
               >

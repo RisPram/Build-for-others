@@ -191,18 +191,21 @@ export const projectDetails = [
         title: "Process",
         description:
           "Fave is one of Southeast Asia's fintech startup that helps consumers save, while empowering small and medium-sized enterprises to grow in the digital economy. Fave's key offering includes cashless payments, online/offline deals and other offers. Fave has been acquired by PineLabs, an India-based unicorn on April 2021.",
+        image: "",
       },
       {
         id: "pd7",
         title: "Final Designs",
         description:
           "Fave is one of Southeast Asia's fintech startup that helps consumers save, while empowering small and medium-sized enterprises to grow in the digital economy. Fave's key offering includes cashless payments, online/offline deals and other offers. Fave has been acquired by PineLabs, an India-based unicorn on April 2021.",
+        image: "",
       },
       {
         id: "pd8",
         title: "Learnings",
         description:
           "Fave is one of Southeast Asia's fintech startup that helps consumers save, while empowering small and medium-sized enterprises to grow in the digital economy. Fave's key offering includes cashless payments, online/offline deals and other offers. Fave has been acquired by PineLabs, an India-based unicorn on April 2021.",
+        image: "",
       },
       {
         id: "pd9",

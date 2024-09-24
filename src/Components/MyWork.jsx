@@ -20,8 +20,8 @@ const MyProject = () => {
               <p className="mb-2 py-3 !text-black font-semibold bg-babyGreen rounded-[30px] w-fit px-6 text-xl">
                 {d?.type}
               </p>
-              <h3 className="py-3 font-bold text-5xl">{d?.title}</h3>
-              <p className="py-3 text-xl whitespace-pre-line">
+              <h3 className="py-3 font-bold text-6xl">{d?.title}</h3>
+              <p className="py-3 text-2xl whitespace-pre-line">
                 {d?.description}
               </p>
               <p

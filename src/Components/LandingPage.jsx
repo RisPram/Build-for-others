@@ -26,7 +26,7 @@ const LandingPage = () => {
             return (
               <p
                 key={i}
-                className="my-3 px-10 py-4 mx-3 text-lg rounded-[30px] border-2 border-[#707070] text-[#fff] font-semibold cursor-pointer
+                className="my-3 px-10 py-4 mx-3 text-xl rounded-[30px] border-2 border-[#707070] text-[#fff] font-semibold cursor-pointer
               hover:bg-babyGreen hover:rounded-xl hover:-rotate-[10deg] hover:text-black duration-300"
               >
                 {d?.name}
@@ -39,7 +39,7 @@ const LandingPage = () => {
             return (
               <p
                 key={i}
-                className="my-3 px-10 py-4 mx-3 text-lg rounded-[30px] border-2 border-[#707070] text-[#fff] font-semibold cursor-pointer
+                className="my-3 px-10 py-4 mx-3 text-xl rounded-[30px] border-2 border-[#707070] text-[#fff] font-semibold cursor-pointer
               hover:bg-babyGreen hover:rounded-xl hover:-rotate-[10deg] hover:text-black duration-300"
               >
                 {d?.name}

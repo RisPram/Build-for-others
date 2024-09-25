@@ -64,7 +64,7 @@ const Footer = ({ whiteMode }) => {
           <p className="text-center md:text-left">
             © {new Date().getFullYear()} Jay Chovatiya. All Rights Reserved
           </p>
-          <p className="text-center md:text-left">Ahmedabad - India</p>
+          <p className="text-center md:text-left">Ahmedabad - India testing</p>
         </section>
       </Container>
     </>

@@ -8,7 +8,7 @@ const LandingPage = ({ whiteMode }) => {
     <>
       <ScrollToTopOfPage />
       <Container whiteMode={whiteMode} inner="my-14 items-center">
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-14 my-4">
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-14 my-4">
           <section className="flex flex-col items-start justify-center">
             <h2
               className={`py-1  text-[#D1D1D1] font-libre ${

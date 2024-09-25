@@ -17,7 +17,7 @@ const MyProject = ({ whiteMode }) => {
                 i % 2 == 0 ? " order-2 lg:order-1" : "  order-2 lg:order-2"
               }`}
             >
-              <p className="mb-2 py-3 !text-black font-semibold bg-babyGreen rounded-[30px] w-fit px-6 text-xl">
+              <p className="mb-2 py-1 sm:py-3 !text-black font-semibold bg-babyGreen rounded-[30px] w-fit px-4 sm:px-6 text-base sm:text-xl">
                 {d?.type}
               </p>
               <h3

@@ -25,7 +25,7 @@ const Business = ({ whiteMode }) => {
                   <img
                     src={d}
                     alt="pic"
-                    className={`object-contain w-full h-full rounded-xl`}
+                    className={`object-cover w-full h-full rounded-xl`}
                   />
                 )}
                 {i == 2 && (

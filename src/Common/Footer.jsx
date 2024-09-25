@@ -16,14 +16,14 @@ const Footer = ({ whiteMode }) => {
         inner="my-14"
       >
         <section className="flex flex-col items-center justify-center">
-          <p className=" py-2 font-semibold text-2xl text-[#989898]">
+          <p className="text-center py-2 font-semibold text-2xl text-[#989898]">
             Let’s Build Something Together
           </p>
-          <p className="p-2 cursor-pointer">
+          <p className="text-center p-2 cursor-pointer">
             <a
-              href={"mailto:jaichovatiya02@gmail.com"}
+              href={`mailto:jaichovatiya02@gmail.com`}
               data-rel="external"
-              className={`no-underline font-semibold ml-2 text-3xl ${
+              className={`no-underline font-semibold ml-2 text-2xl md:text-3xl ${
                 whiteMode ? "text-black" : "text-[#fff]"
               }`}
             >
@@ -46,7 +46,7 @@ const Footer = ({ whiteMode }) => {
             })}
           </div>
           <p
-            className={`text-xl py-3 ${
+            className={`text-center text-xl py-3 ${
               whiteMode ? "text-black" : "text-[#707070]"
             }`}
           >

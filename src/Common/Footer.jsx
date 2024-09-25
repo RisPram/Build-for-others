@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Container from "./Container";
 import { menu, socialMedia } from "./RealData";
@@ -19,7 +19,7 @@ const Footer = ({ whiteMode }) => {
           <p className=" py-2 font-semibold text-2xl text-[#989898]">
             Let’s Build Something Together
           </p>
-          <p className="p-2 flex cursor-pointer items-end">
+          <p className="p-2 cursor-pointer">
             <a
               href={"mailto:jaichovatiya02@gmail.com"}
               data-rel="external"
@@ -50,19 +50,21 @@ const Footer = ({ whiteMode }) => {
               whiteMode ? "text-black" : "text-[#707070]"
             }`}
           >
-            Design by Me. Built by Rishita Pramanick
+            Designed by me. Built by Rishita Pramanick
           </p>
         </section>
       </Container>
       <p className="border-t-[1px] border-t-[#4c4c4c]"></p>
       <Container whiteMode={whiteMode} outer="bg-[#101010]">
         <section
-          className={`flex justify-between text-xl py-4
+          className={`flex flex-col md:flex-row md:justify-between items-center md:items-start text-lg md:text-xl py-4
            ${whiteMode ? "text-[#707070]" : "text-[#C1C1C1] "}
             `}
         >
-          <p>© {new Date().getFullYear()} Jay Chovatiya. All Rights Reserved</p>
-          <p>Ahmedabad - India</p>
+          <p className="text-center md:text-left">
+            © {new Date().getFullYear()} Jay Chovatiya. All Rights Reserved
+          </p>
+          <p className="text-center md:text-left">Ahmedabad - India</p>
         </section>
       </Container>
     </>

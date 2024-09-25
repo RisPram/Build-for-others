@@ -21,7 +21,7 @@ const LandingPage = ({ whiteMode }) => {
               UI/UX Designer based in Ahmedabad
             </h4>
             <p
-              className={`py-5 text-5xl ${
+              className={`py-5 text-4xl lg:text-5xl ${
                 whiteMode ? "text-black" : "text-[#fff]"
               } font-semibold`}
             >
@@ -35,7 +35,7 @@ const LandingPage = ({ whiteMode }) => {
               />
             </figure>
           </section>
-          <figure className="w-full flex items-center justify-end rounded-lg">
+          <figure className="w-full flex items-center justify-center lg:justify-end rounded-lg">
             <img
               src={personPhoto}
               alt="person"
@@ -58,8 +58,7 @@ const LandingPage = ({ whiteMode }) => {
                 key={i}
                 className={`my-3 px-10 py-4 mx-3 text-xl rounded-[30px] border-2 border-[#707070]  ${
                   whiteMode ? "text-black" : "text-[#fff]"
-                } font-semibold cursor-pointer
-              hover:bg-babyGreen hover:rounded-xl hover:-rotate-[10deg] hover:text-black duration-300`}
+                } font-semibold cursor-pointer hover:bg-babyGreen hover:rounded-xl hover:-rotate-[10deg] hover:text-black duration-300`}
               >
                 {d?.name}
               </p>

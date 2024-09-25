@@ -1,34 +1,65 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { Menu, Close } from "@mui/icons-material";
 import Container from "./Container";
 import { menu } from "./RealData";
-import { logo, mode, whiteMode, darkMode } from "../Assets";
+import { logo, whiteMode, darkMode } from "../Assets";
 const Header = ({ handleModeChange }) => {
   const navigate = useNavigate();
 
   const [state, setState] = useState({
     selectedTab: "menuA",
     mode: false,
+    openMenu: false,
   });
 
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  });
+  const optionsBlockRef = useRef();
+
+  const handleClickOutside = (event) => {
+    if (!optionsBlockRef.current?.contains(event.target)) {
+      setState((prev) => {
+        return { ...prev, openMenu: false };
+      });
+    }
+  };
+  const handleMenuClick = (data) => {
+    setState((prev) => {
+      return { ...prev, selectedTab: data?.id };
+    });
+
+    setTimeout(() => {
+      data?.id !== "menuD"
+        ? navigate(`${data?.link}`)
+        : window.open(
+            data?.download,
+            "_blank",
+            "toolbar=yes, location=yes, status=yes, menubar=yes, scrollbars=yes"
+          );
+    }, 200);
+  };
   return (
-    <Container segment="header" whiteMode={state?.mode}>
+    <Container segment="header" whiteMode={state?.mode} inner="my-4">
       <nav className="flex w-full h-full">
         <figure className="w-[10%] flex items-start">
           <img
             src={logo}
             alt="logo"
-            className="object-contain w-full h-full cursor-pointer"
+            className="object-contain w-14 h-14 cursor-pointer"
             onClick={() => {
               navigate("/");
             }}
           />
         </figure>
-        <section className="w-[85%] flex items-center justify-end">
-          <section
-            className="w-fit bg-[#3a3939]/40 flex p-2 rounded-[30px]
-          backdrop-blur-sm"
-          >
+        {/* above 768px-md */}
+        <section className="w-[90%] hidden md:flex justify-end">
+          <section className="w-fit bg-[#3a3939]/40 p-2 rounded-[30px] backdrop-blur-sm flex items-center justify-end">
             {menu?.map((d, i) => {
               return (
                 <p
@@ -39,17 +70,7 @@ const Header = ({ handleModeChange }) => {
                       : "text-[#fff]"
                   }`}
                   onClick={() => {
-                    setState((prev) => {
-                      return { ...prev, selectedTab: d?.id };
-                    });
-
-                    d?.id !== "menuD"
-                      ? navigate(`${d?.link}`)
-                      : window.open(
-                          d?.download,
-                          "_blank",
-                          "toolbar=yes, location=yes, status=yes, menubar=yes, scrollbars=yes"
-                        );
+                    handleMenuClick(d);
                   }}
                 >
                   {d?.title}
@@ -57,20 +78,101 @@ const Header = ({ handleModeChange }) => {
               );
             })}
           </section>
+          <figure className="ml-2 w-[5%] flex items-center justify-center">
+            <img
+              src={state?.mode ? whiteMode : darkMode}
+              alt="mode"
+              className="duration-200 object-contain w-[40px] h-[40px] cursor-pointer bg-white rounded-full p-1.5"
+              onClick={() => {
+                handleModeChange(!state.mode);
+                setState((prev) => {
+                  return { ...prev, mode: !state.mode };
+                });
+              }}
+            />
+          </figure>
         </section>
-        <figure className=" ml-2 w-[5%] flex items-center justify-center">
-          <img
-            src={state?.mode ? whiteMode : darkMode}
-            alt="mode"
-            className="duration-200 object-contain w-[40px] h-[40px] cursor-pointer bg-white rounded-full p-1.5"
+
+        {/* below 768px responsive hamburger */}
+        <section className="w-[90%] flex md:hidden flex-col items-end justify-center">
+          <section
+            ref={optionsBlockRef}
+            className="flex flex-col md:hidden relative items-center justify-end"
             onClick={() => {
-              handleModeChange(!state.mode);
-              setState((prev) => {
-                return { ...prev, mode: !state.mode };
-              });
+              setTimeout(() => {
+                setState((prev) => {
+                  return { ...prev, openMenu: !state.openMenu };
+                });
+              }, 200);
             }}
-          />
-        </figure>
+          >
+            <span className="cursor-pointer relative ">
+              {state.openMenu ? (
+                <Close
+                  className={`!h-10 !w-10 ${
+                    state.mode ? "text-baseColor" : "text-whiteMode"
+                  }`}
+                />
+              ) : (
+                <Menu
+                  className={`!h-10 !w-10 ${
+                    state.mode ? "text-baseColor" : "text-whiteMode"
+                  }`}
+                />
+              )}
+            </span>
+
+            {state.openMenu && (
+              <div
+                className={`${
+                  state.mode ? "bg-gray-200" : "bg-baseColor"
+                }  z-50 w-[200px] h-[250px] bg-gray-800 rounded-md py-2 px-1 absolute top-12 right-0 flex flex-col menu-animate-slide-left items-center justify-center`}
+              >
+                {menu?.map((d, i) => {
+                  return (
+                    <p
+                      key={i}
+                      className={`my-1 py-1 px-10 rounded-[30px] hover:bg-babyGreen hover:text-gray-600 duration-300 cursor-pointer text-lg font-bold ${
+                        state.selectedTab === d?.id
+                          ? "bg-babyGreen text-[#101010]"
+                          : state.mode
+                          ? "text-baseColor"
+                          : "text-[#fff]"
+                      }`}
+                      onClick={() => {
+                        handleMenuClick(d);
+                      }}
+                    >
+                      {d?.title}
+                    </p>
+                  );
+                })}
+                <figure
+                  className="ml-2 w-full flex items-center justify-between px-5 cursor-pointer"
+                  onClick={() => {
+                    handleModeChange(!state.mode);
+                    setState((prev) => {
+                      return { ...prev, mode: !state.mode };
+                    });
+                  }}
+                >
+                  <figcaption
+                    className={` ${
+                      state.mode ? "text-baseColor" : "text-[#fff]"
+                    } my-1 py-2  rounded-[30px] duration-300 cursor-pointer text-lg font-bold`}
+                  >
+                    Switch Mode
+                  </figcaption>
+                  <img
+                    src={state?.mode ? whiteMode : darkMode}
+                    alt="mode"
+                    className="duration-200 object-contain w-[30px] h-[30px] cursor-pointer bg-white rounded-full p-1.5"
+                  />
+                </figure>
+              </div>
+            )}
+          </section>
+        </section>
       </nav>
     </Container>
   );

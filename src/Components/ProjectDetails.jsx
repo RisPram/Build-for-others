@@ -35,10 +35,10 @@ const ProjectDetails = ({ whiteMode }) => {
           {specificList[0]?.introdetails?.map((d, i) => {
             return (
               <section
-                className="my-10 w-[70%] flex flex-col items-center justify-center"
+                className="my-10 w-[90%] lg:w-[70%] flex flex-col items-center justify-center"
                 key={i}
               >
-                <figure className="w-full h-[600px] pb-6">
+                <figure className="w-full h-[350px] md:h-[600px] pb-6">
                   <img
                     src={d?.image}
                     className="object-fill w-full h-full rounded-lg"
@@ -46,17 +46,20 @@ const ProjectDetails = ({ whiteMode }) => {
                 </figure>
                 <section className="w-full mx-auto">
                   <p
-                    className={`py-6 text-4xl font-bold ${
+                    className={`py-6 text-3xl lg:text-4xl font-bold ${
                       whiteMode ? "text-[#101010]" : "text-[#fff]"
                     }`}
                   >
                     {d?.title}
                   </p>
                   <hr />
-                  <div className="py-6 grid grid-cols-3">
+                  <div className="py-6 grid grid-cols-1 md:grid-cols-3">
                     {d?.timeline?.map((x, i) => {
                       return (
-                        <p className="flex flex-col text-2xl" key={i}>
+                        <p
+                          className="my-2 flex flex-col text-xl lg:text-2xl"
+                          key={i}
+                        >
                           <span className="py-1 text-[#707070] font-semibold">
                             {x?.title}
                           </span>
@@ -77,9 +80,9 @@ const ProjectDetails = ({ whiteMode }) => {
             );
           })}
         </section>
-        <section className="grid grid-cols-[20%_80%] mt-20">
+        <section className="grid grid-cols-1 md:grid-cols-[30%_70%]  xl:grid-cols-[20%_80%] mt-20">
           {/* left */}
-          <section className="px-10 py-8 flex flex-col items-start">
+          <section className="px-10 py-8 hidden md:flex lg:flex-col items-start">
             <div className="sticky top-[150px]">
               {specificList[0]?.details?.map((d, i) => {
                 return (
@@ -91,7 +94,7 @@ const ProjectDetails = ({ whiteMode }) => {
                         return { ...prev, selectedTab: d?.title };
                       });
                     }}
-                    className={`py-3 text-2xl cursor-pointer duration-200 font-semibold
+                    className={`py-3 text-xl lg:text-2xl cursor-pointer duration-200 font-semibold
                         ${
                           whiteMode
                             ? "hover:text-[#525155]"
@@ -113,22 +116,24 @@ const ProjectDetails = ({ whiteMode }) => {
             </div>
           </section>
           {/* right */}
-          <section className="flex flex-col">
+          <section className="w-full flex flex-col">
             {/* details */}
             <section className="w-[100%] mx-auto">
               {specificList[0]?.details?.map((d, i) => {
                 return (
                   <section
-                    className={`py-8 flex flex-col ${
-                      whiteMode ? "text-[ #525155]" : "text-[#fff]"
+                    className={` flex flex-col ${
+                      whiteMode ? "text-[#525155]" : "text-[#fff]"
                     }`}
                     key={i}
-                    id={`${d?.id}`}
                   >
-                    <p className="py-2 text-4xl font-semibold">{d?.title}</p>
+                    <p className={`h-8`} id={`${d?.id}`}></p>
+                    <p className="py-2 text-3xl lg:text-4xl font-semibold">
+                      {d?.title}
+                    </p>
 
                     <p
-                      className="py-4 text-2xl text-justify whitespace-pre-line"
+                      className="py-4 text-xl lg:text-2xl text-justify whitespace-pre-line"
                       dangerouslySetInnerHTML={{
                         __html: d?.description,
                       }}

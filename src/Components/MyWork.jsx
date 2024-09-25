@@ -10,25 +10,25 @@ const MyProject = ({ whiteMode }) => {
         return (
           <section
             key={i}
-            className="grid grid-cols-1 md:grid-cols-2 my-10 gap-14"
+            className={`grid grid-cols-1 lg:grid-cols-2 my-14 gap-14`}
           >
             <section
               className={`flex items-start justify-center flex-col  ${
-                i % 2 == 0 ? "order-1" : "order-2"
+                i % 2 == 0 ? " order-2 lg:order-1" : "  order-2 lg:order-2"
               }`}
             >
               <p className="mb-2 py-3 !text-black font-semibold bg-babyGreen rounded-[30px] w-fit px-6 text-xl">
                 {d?.type}
               </p>
               <h3
-                className={`py-3 font-bold text-6xl ${
+                className={`py-3 font-bold text-5xl lg:text-6xl ${
                   whiteMode ? "text-[#101010]" : "text-[#fff]"
                 }`}
               >
                 {d?.title}
               </h3>
               <p
-                className={`py-3 text-2xl whitespace-pre-line ${
+                className={`py-3 text-xl lg:text-2xl whitespace-pre-line ${
                   whiteMode ? "text-[#525155]" : "text-[#D1D1D1]"
                 }`}
               >
@@ -47,7 +47,11 @@ const MyProject = ({ whiteMode }) => {
               </p>
             </section>
 
-            <figure className={`p-2 ${i % 2 == 0 ? "order-2" : "order-1"}`}>
+            <figure
+              className={`p-2 ${
+                i % 2 == 0 ? " order-1 lg:order-2" : " order-1 lg:order-1"
+              }`}
+            >
               <img
                 src={d?.img}
                 alt="project"

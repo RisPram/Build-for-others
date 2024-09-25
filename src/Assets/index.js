@@ -1,7 +1,8 @@
 import whiteMode from "./images/whiteMode.png";
 import darkMode from "./images/darkMode.png";
 
-import logo from "./images/logo.png";
+// import logo from "./images/logo.png";
+import logo from "./images/logoB.png";
 import myProject1 from "./images/myProject1.png";
 import myProject2 from "./images/myProject2.png";
 import myProject3 from "./images/myProject3.png";

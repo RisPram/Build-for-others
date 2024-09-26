@@ -14,21 +14,21 @@ const MyProject = ({ whiteMode }) => {
           >
             <section
               className={`flex items-start justify-center flex-col  ${
-                i % 2 == 0 ? " order-2 lg:order-1" : "  order-2 lg:order-2"
+                i % 2 == 0 ? "order-2 lg:order-1" : "order-2 lg:order-2"
               }`}
             >
-              <p className="mb-2 py-1 sm:py-3 !text-black font-semibold bg-babyGreen rounded-[30px] w-fit px-4 sm:px-6 text-base sm:text-xl">
+              <p className="mb-2 py-1 sm:py-2 !text-black font-semibold bg-babyGreen rounded-[30px] w-fit px-4 sm:px-6 text-base sm:text-lg">
                 {d?.type}
               </p>
               <h3
-                className={`py-3 font-bold text-5xl lg:text-6xl ${
+                className={`py-3 font-bold !text-3xl lg:!text-4xl ${
                   whiteMode ? "text-[#101010]" : "text-[#fff]"
                 }`}
               >
                 {d?.title}
               </h3>
               <p
-                className={`py-3 text-xl lg:text-2xl whitespace-pre-line ${
+                className={`py-3 text-xl whitespace-pre-line ${
                   whiteMode ? "text-[#525155]" : "text-[#D1D1D1]"
                 }`}
               >
@@ -42,7 +42,9 @@ const MyProject = ({ whiteMode }) => {
                   navigate(`/project-details/${d?.slug}`);
                 }}
               >
-                <span className="group-hover:underline">See My Work</span>
+                <span className="group-hover:underline font-semibold">
+                  See My Work
+                </span>
                 <img src={iconLink} alt="link" className="ml-2 w-8 h-8" />
               </p>
             </section>

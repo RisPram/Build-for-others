@@ -12,18 +12,18 @@ const Footer = ({ whiteMode }) => {
     <>
       <Container
         whiteMode={whiteMode}
-        outer="bg-[#101010] border-t-[1px] border-[#4c4c4c]"
+        outer="bg-[#101010] border-t-[1px] border-[#989898]"
         inner="my-14"
       >
         <section className="flex flex-col items-center justify-center">
-          <p className="text-center py-2 font-semibold text-2xl text-[#989898]">
+          <p className="text-center py-2  text-2xl text-[#989898] font-libre">
             Let’s Build Something Together
           </p>
-          <p className="text-center p-2 cursor-pointer">
+          <p className="text-center py-4 cursor-pointer">
             <a
               href={`mailto:jaichovatiya02@gmail.com`}
               data-rel="external"
-              className={`no-underline font-semibold ml-2 text-2xl md:text-3xl ${
+              className={`no-underline font-semibold ml-2 text-2xl md:text-4xl ${
                 whiteMode ? "text-black" : "text-[#fff]"
               }`}
             >
@@ -31,7 +31,7 @@ const Footer = ({ whiteMode }) => {
             </a>
           </p>
 
-          <div className="py-3 flex items-end">
+          <div className="py-6 flex items-end">
             {socialMedia?.map((d, i) => {
               return (
                 <figure
@@ -46,7 +46,7 @@ const Footer = ({ whiteMode }) => {
             })}
           </div>
           <p
-            className={`text-center text-xl py-3 ${
+            className={`text-center text-xl pt-8 pb-2 ${
               whiteMode ? "text-black" : "text-[#707070]"
             }`}
           >
@@ -54,7 +54,7 @@ const Footer = ({ whiteMode }) => {
           </p>
         </section>
       </Container>
-      <p className="border-t-[1px] border-t-[#4c4c4c]"></p>
+      <p className="border-t-[1px] border-t-[#d1d1d1]"></p>
       <Container whiteMode={whiteMode} outer="bg-[#101010]">
         <section
           className={`flex flex-col md:flex-row md:justify-between items-center md:items-start text-lg md:text-xl py-4

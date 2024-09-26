@@ -125,8 +125,8 @@ const Header = ({ handleModeChange }) => {
             {state.openMenu && (
               <div
                 className={`${
-                  state.mode ? "bg-gray-200" : "bg-baseColor"
-                }  z-50 w-[200px] h-[250px] bg-gray-800 rounded-md py-2 px-1 absolute top-12 right-0 flex flex-col menu-animate-slide-left items-center justify-center`}
+                  state.mode ? "bg-gray-300" : "bg-baseColor"
+                }  z-50 w-[200px] h-[250px]  rounded-md py-2 px-1 absolute top-12 right-0 flex flex-col menu-animate-slide-left items-center justify-center`}
               >
                 {menu?.map((d, i) => {
                   return (
@@ -166,7 +166,9 @@ const Header = ({ handleModeChange }) => {
                   <img
                     src={state?.mode ? whiteMode : darkMode}
                     alt="mode"
-                    className="duration-200 object-contain w-[30px] h-[30px] cursor-pointer bg-white rounded-full p-1.5"
+                    className={`duration-200 object-contain w-[30px] h-[30px] cursor-pointer ${
+                      !state?.mode ? "bg-white" : "bg-transparent"
+                    } rounded-full p-1.5`}
                   />
                 </figure>
               </div>

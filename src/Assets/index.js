@@ -11,7 +11,6 @@ import iconLink from "./images/iconLink.png";
 import linkedIn from "./images/linkedin.png";
 import twitter from "./images/twitter.png";
 import personPhoto from "./images/personPhoto.png";
-import mode from "./images/dark-mode.png";
 //side business images
 import bsideA from "./images/Bside/bsideA.png";
 import bsideB from "./images/Bside/bsideB.png";
@@ -46,7 +45,6 @@ export {
   bsideC,
   bsideD,
   bsideE,
-  mode,
   homepageA,
   resume,
 };

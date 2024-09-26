@@ -45,13 +45,13 @@ const ProjectDetails = ({ whiteMode }) => {
                   />
                 </figure>
                 <section className="w-full mx-auto">
-                  <p
-                    className={`py-6 text-3xl lg:text-4xl font-bold ${
+                  <h3
+                    className={`py-6 !text-3xl lg:!text-4xl font-bold ${
                       whiteMode ? "text-[#101010]" : "text-[#fff]"
                     }`}
                   >
                     {d?.title}
-                  </p>
+                  </h3>
                   <hr />
                   <div className="py-6 grid grid-cols-1 md:grid-cols-3">
                     {d?.timeline?.map((x, i) => {
@@ -80,7 +80,7 @@ const ProjectDetails = ({ whiteMode }) => {
             );
           })}
         </section>
-        <section className="grid grid-cols-1 md:grid-cols-[30%_70%]  xl:grid-cols-[20%_80%] mt-20">
+        <section className="grid grid-cols-1 md:grid-cols-[30%_70%]  xl:grid-cols-[20%_60%] mt-20">
           {/* left */}
           <section className="px-10 py-8 hidden md:flex lg:flex-col items-start">
             <div className="sticky top-[150px]">
@@ -128,12 +128,12 @@ const ProjectDetails = ({ whiteMode }) => {
                     key={i}
                   >
                     <p className={`h-8`} id={`${d?.id}`}></p>
-                    <p className="py-2 text-3xl lg:text-4xl font-semibold">
+                    <h3 className="py-2 !text-3xl lg:!text-4xl font-semibold">
                       {d?.title}
-                    </p>
+                    </h3>
 
                     <p
-                      className="py-4 text-xl lg:text-2xl text-justify whitespace-pre-line"
+                      className="py-4 text-xl text-justify whitespace-pre-line"
                       dangerouslySetInnerHTML={{
                         __html: d?.description,
                       }}
@@ -176,7 +176,7 @@ const ProjectDetails = ({ whiteMode }) => {
                 <h3
                   className={`py-3 font-bold ${
                     whiteMode ? "text-[#101010]" : "text-[#fff]"
-                  } text-5xl`}
+                  } !text-5xl`}
                 >
                   {d?.title}
                 </h3>
@@ -189,7 +189,7 @@ const ProjectDetails = ({ whiteMode }) => {
                   }}
                 >
                   <span
-                    className={`group-hover:underline 
+                    className={`group-hover:underline font-semibold 
                     ${whiteMode ? "text-[#525155]" : "text-[#D1D1D1]"}
                     `}
                   >

@@ -7,6 +7,11 @@ import {
   twitter,
   pImg,
   resume,
+  bsideA,
+  bsideB,
+  bsideC,
+  bsideD,
+  bsideE,
 } from "../Assets";
 export const menu = [
   {
@@ -458,5 +463,46 @@ export const projectDetails = [
           "Fave is one of Southeast Asia's fintech startup that helps consumers save, while empowering small and medium-sized enterprises to grow in the digital economy. Fave's key offering includes cashless payments, online/offline deals and other offers. Fave has been acquired by PineLabs, an India-based unicorn on April 2021.",
       },
     ],
+  },
+];
+export const businessImages = [
+  {
+    id: "bIA",
+    image: bsideA,
+    heading: "Procreate",
+    subHeading: "Making a digitally animated campfire",
+  },
+  {
+    id: "bIB",
+    image: bsideB,
+    heading: "Procreate",
+    subHeading: "Making a digitally animated campfire",
+  },
+
+  {
+    id: "bIC",
+    name: "B-Side",
+    description:
+      " Personal project for skills enhancement and self-driven initiatives that can help you learn and develop new skills.",
+    heading: "Illustrator",
+    subHeading: "Bridges logo design",
+  },
+  {
+    id: "bID",
+    image: bsideC,
+    heading: "Procreate",
+    subHeading: "Making a digitally animated campfire",
+  },
+  {
+    id: "bIE",
+    image: bsideD,
+    heading: "Procreate",
+    subHeading: "Making a digitally animated campfire",
+  },
+  {
+    id: "bIF",
+    image: bsideE,
+    heading: "Procreate",
+    subHeading: "Making a digitally animated campfire",
   },
 ];

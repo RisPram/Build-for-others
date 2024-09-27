@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 const Container = ({ whiteMode, outer, inner, children, segment }) => {
-  console.log("in container>", whiteMode);
-
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const handleScroll = () => {

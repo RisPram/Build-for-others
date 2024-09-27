@@ -7,7 +7,6 @@ const Index = () => {
   const [state, setState] = useState({
     whiteMode: false,
   });
-  console.log("whiteMode>>", state.whiteMode);
 
   const handleModeChange = (data) => {
     setState((prev) => {

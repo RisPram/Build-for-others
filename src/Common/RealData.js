@@ -475,8 +475,8 @@ export const businessImages = [
   {
     id: "bIB",
     image: bsideB,
-    heading: "Procreate",
-    subHeading: "Making a digitally animated campfire",
+    heading: "",
+    subHeading: "",
   },
 
   {
@@ -484,25 +484,25 @@ export const businessImages = [
     name: "B-Side",
     description:
       " Personal project for skills enhancement and self-driven initiatives that can help you learn and develop new skills.",
-    heading: "Illustrator",
-    subHeading: "Bridges logo design",
+    heading: "",
+    subHeading: "",
   },
   {
     id: "bID",
     image: bsideC,
-    heading: "Procreate",
-    subHeading: "Making a digitally animated campfire",
+    heading: "Illustrator",
+    subHeading: "Bridges logo design",
   },
   {
     id: "bIE",
     image: bsideD,
-    heading: "Procreate",
-    subHeading: "Making a digitally animated campfire",
+    heading: "",
+    subHeading: "",
   },
   {
     id: "bIF",
     image: bsideE,
-    heading: "Procreate",
-    subHeading: "Making a digitally animated campfire",
+    heading: "",
+    subHeading: "",
   },
 ];

@@ -5,7 +5,7 @@ import AboutMe from "./Components/AboutMe";
 import Business from "./Components/Business";
 
 const AllRoutes = ({ whiteMode }) => {
-  console.log("in routes>", whiteMode);
+  // console.log("in routes>", whiteMode);
   let routes = useRoutes([
     {
       path: "/",

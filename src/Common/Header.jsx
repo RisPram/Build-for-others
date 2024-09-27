@@ -106,7 +106,7 @@ const Header = ({ handleModeChange }) => {
               }, 200);
             }}
           >
-            <span className="cursor-pointer relative ">
+            <span className="cursor-pointer relative">
               {state.openMenu ? (
                 <Close
                   className={`!h-10 !w-10 ${
@@ -126,7 +126,7 @@ const Header = ({ handleModeChange }) => {
               <div
                 className={`${
                   state.mode ? "bg-gray-300" : "bg-baseColor"
-                }  z-50 w-[200px] h-[250px]  rounded-md py-2 px-1 absolute top-12 right-0 flex flex-col menu-animate-slide-left items-center justify-center`}
+                }  z-50 w-[290px] h-[250px] rounded-md py-2 px-1 absolute top-12 right-0 flex flex-col menu-animate-slide-topBottom items-center justify-center`}
               >
                 {menu?.map((d, i) => {
                   return (
@@ -148,7 +148,7 @@ const Header = ({ handleModeChange }) => {
                   );
                 })}
                 <figure
-                  className="ml-2 w-full flex items-center justify-between px-5 cursor-pointer"
+                  className="ml-2 w-full flex items-center justify-center px-5 cursor-pointer"
                   onClick={() => {
                     handleModeChange(!state.mode);
                     setState((prev) => {
@@ -166,7 +166,7 @@ const Header = ({ handleModeChange }) => {
                   <img
                     src={state?.mode ? whiteMode : darkMode}
                     alt="mode"
-                    className={`duration-200 object-contain w-[30px] h-[30px] cursor-pointer ${
+                    className={`mx-2 duration-200 object-contain w-[30px] h-[30px] cursor-pointer ${
                       !state?.mode ? "bg-white" : "bg-transparent"
                     } rounded-full p-1.5`}
                   />

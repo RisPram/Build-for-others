@@ -60,17 +60,17 @@ body {
  ::-webkit-scrollbar-thumb:hover {
      background: #153865;
  }
- @keyframes menu-slide-left {
+ @keyframes menu-slide-topBottom {
     0% {
-        transform: translateX(100%);
+        transform: translateY(-100%);
         opacity: 0;
     }
     100% {
-        transform: translateX(0);
+        transform: translateY(0);
         opacity: 1;
     }
   }
   
-  .menu-animate-slide-left {
-    animation: menu-slide-left 0.5s ease-out forwards;
+  .menu-animate-slide-topBottom {
+    animation: menu-slide-topBottom 0.5s ease-out forwards;
   }

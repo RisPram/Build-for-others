@@ -133,13 +133,13 @@ const ProjectDetails = ({ whiteMode }) => {
                     </h3>
 
                     <p
-                      className="py-4 text-xl text-justify whitespace-pre-line"
+                      className="py-4 text-xl text-left lg:text-justify whitespace-pre-line"
                       dangerouslySetInnerHTML={{
                         __html: d?.description,
                       }}
                     ></p>
                     {d?.image && (
-                      <figure className="w-[80%] mx-auto h-[450px] py-6">
+                      <figure className="w-full lg:w-[80%] mx-auto h-[450px] py-6">
                         <img
                           src={d?.image}
                           className="object-contain rounded-lg w-full h-full"

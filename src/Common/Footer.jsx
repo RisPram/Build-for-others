@@ -24,7 +24,7 @@ const Footer = ({ whiteMode }) => {
               href={`mailto:jaichovatiya02@gmail.com`}
               data-rel="external"
               className={`no-underline font-semibold ml-2 text-2xl md:text-4xl ${
-                whiteMode ? "text-black" : "text-[#fff]"
+                !whiteMode ? "text-black" : "text-[#fff]"
               }`}
             >
               jaichovatiya02@gmail.com

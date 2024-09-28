@@ -1,14 +1,41 @@
-import { personPhoto, homepageA } from "../Assets";
+import React, { useState, useEffect } from "react";
+import { personPhoto, homepageA, bgEffect } from "../Assets";
 import Container from "../Common/Container";
 import { skills } from "../Common/RealData";
 import ScrollToTopOfPage from "../Common/ScrollToTopOfPage";
 import MyProject from "./MyWork";
 const LandingPage = ({ whiteMode }) => {
+  const [state, setState] = useState({
+    image: homepageA,
+    index: 0,
+  });
+  let arr = [homepageA, personPhoto, homepageA, personPhoto, homepageA];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Update the heading index (loop back to 0 if it's the last heading)
+      setState((prev) => {
+        return { ...prev, index: (prev.index + 1) % arr?.length };
+      });
+      return () => clearInterval(interval);
+    }, 5000);
+  }, []); // Change every 2 seconds
+  useEffect(() => {
+    setState((prev) => {
+      return { ...prev, image: arr[state.index] };
+    });
+  }, [state?.index]);
   return (
     <>
       <ScrollToTopOfPage />
-      <Container whiteMode={whiteMode} inner="my-14 items-center">
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-14 my-4">
+      <Container
+        whiteMode={whiteMode}
+        inner="my-14 items-center"
+        style={{ backgroundImage: `url(${bgEffect})` }}
+      >
+        <section
+          className={`grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-14 my-4`}
+        >
           <section className="flex flex-col items-start justify-center">
             <h2
               className={`py-1 font-libre !text-lg md:!text-3xl ${
@@ -27,9 +54,9 @@ const LandingPage = ({ whiteMode }) => {
             >
               Simplifying tough problems to make accessible solutions with
             </p>
-            <figure className="w-full rounded-lg py-1">
+            <figure className="w-full rounded-lg py-1 h-[50px] duration-200">
               <img
-                src={homepageA}
+                src={state?.image}
                 alt="change"
                 className="object-contain w-full h-full"
               />
@@ -46,7 +73,7 @@ const LandingPage = ({ whiteMode }) => {
       </Container>
 
       {/* skills */}
-      <section className="relative flex overflow-x-hidden w-[98%] mx-auto">
+      {/* <section className="relative flex overflow-x-hidden mx-auto">
         <section
           className={`py-5 lg:py-20 flex items-center justify-center animate-marquee whitespace-nowrap  ${
             whiteMode ? "bg-whiteMode" : "bg-baseColor"
@@ -84,7 +111,7 @@ const LandingPage = ({ whiteMode }) => {
             );
           })}
         </section>
-      </section>
+      </section> */}
 
       {/* my project */}
       <MyProject whiteMode={whiteMode} />

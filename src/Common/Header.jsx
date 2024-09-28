@@ -126,7 +126,7 @@ const Header = ({ handleModeChange }) => {
               <div
                 className={`${
                   state.mode ? "bg-gray-300" : "bg-baseColor"
-                }  z-50 w-[290px] h-[250px] rounded-md py-2 px-1 absolute top-12 right-0 flex flex-col menu-animate-slide-topBottom items-center justify-center`}
+                }  z-50 w-[90vw] h-[250px] rounded-md py-2 px-1 absolute top-12 right-0 flex flex-col menu-animate-slide-topBottom items-center justify-center`}
               >
                 {menu?.map((d, i) => {
                   return (

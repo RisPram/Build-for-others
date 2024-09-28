@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Menu, Close } from "@mui/icons-material";
 import Container from "./Container";
 import { menu } from "./RealData";
-import { logo, whiteMode, darkMode } from "../Assets";
+import { Jlogo, whiteMode, darkMode, day, night, hamburger } from "../Assets";
 const Header = ({ handleModeChange }) => {
   const navigate = useNavigate();
 
@@ -49,7 +49,7 @@ const Header = ({ handleModeChange }) => {
       <nav className="flex w-full h-full">
         <figure className="w-[10%] flex items-start">
           <img
-            src={logo}
+            src={Jlogo}
             alt="logo"
             className="object-contain w-14 h-14 cursor-pointer"
             onClick={() => {
@@ -64,7 +64,7 @@ const Header = ({ handleModeChange }) => {
               return (
                 <p
                   key={i}
-                  className={`mx-2 first:!ml-0 last:!mr-0 py-2 px-6 rounded-[30px] hover:bg-babyGreen hover:text-gray-600 duration-300 cursor-pointer text-xl font-bold ${
+                  className={`mx-2 first:!ml-0 last:!mr-0 py-2 px-6 rounded-[30px] hover:bg-babyGreen hover:text-gray-600 duration-300 cursor-pointer text-lg font-bold ${
                     state.selectedTab === d?.id
                       ? "bg-babyGreen text-[#101010]"
                       : "text-[#fff]"
@@ -80,7 +80,7 @@ const Header = ({ handleModeChange }) => {
           </section>
           <figure className="ml-2 w-[5%] flex items-center justify-center">
             <img
-              src={state?.mode ? whiteMode : darkMode}
+              src={state?.mode ? day : night}
               alt="mode"
               className="duration-200 object-contain w-[40px] h-[40px] cursor-pointer bg-white rounded-full p-1.5"
               onClick={() => {
@@ -109,16 +109,23 @@ const Header = ({ handleModeChange }) => {
             <span className="cursor-pointer relative">
               {state.openMenu ? (
                 <Close
-                  className={`!h-10 !w-10 ${
+                  className={`!h-8 !w-8 ${
                     state.mode ? "text-baseColor" : "text-whiteMode"
                   }`}
                 />
               ) : (
-                <Menu
-                  className={`!h-10 !w-10 ${
-                    state.mode ? "text-baseColor" : "text-whiteMode"
-                  }`}
+                <img
+                  src={hamburger}
+                  alt="mode"
+                  className={`mx-2 duration-200 object-contain w-[30px] h-[30px] cursor-pointer ${
+                    !state?.mode ? "bg-white" : "bg-transparent"
+                  } rounded-full p-1.5`}
                 />
+                // <Menu
+                //   className={`!h-10 !w-10 ${
+                //     state.mode ? "text-baseColor" : "text-whiteMode"
+                //   }`}
+                // />
               )}
             </span>
 
@@ -164,7 +171,7 @@ const Header = ({ handleModeChange }) => {
                     Switch Mode
                   </figcaption>
                   <img
-                    src={state?.mode ? whiteMode : darkMode}
+                    src={state?.mode ? day : night}
                     alt="mode"
                     className={`mx-2 duration-200 object-contain w-[30px] h-[30px] cursor-pointer ${
                       !state?.mode ? "bg-white" : "bg-transparent"

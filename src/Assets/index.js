@@ -1,6 +1,10 @@
 import whiteMode from "./images/whiteMode.png";
 import darkMode from "./images/darkMode.png";
 import bgEffect from "./images/bgEffect.png";
+import day from "./images/Day.svg";
+import night from "./images/Night.svg";
+import hamburger from "./images/HamburgerMenu.svg";
+import Jlogo from "./images/JLogo.svg";
 // import logo from "./images/logo.png";
 import logo from "./images/logoB.png";
 import myProject1 from "./images/myProject1.png";
@@ -28,6 +32,10 @@ import homepageA from "./images/AboutMe/homepageA.png";
 import resume from "../Assets/samplepdf.pdf";
 
 export {
+  day,
+  night,
+  hamburger,
+  Jlogo,
   bgEffect,
   whiteMode,
   darkMode,

@@ -60,7 +60,7 @@ const LandingPage = ({ whiteMode }) => {
             >
               Simplifying tough problems to make accessible solutions with
             </p>
-            <figure className="w-full lg:w-[75%] rounded-lg py-1 h-[100px] duration-200">
+            <figure className="w-full lg:w-[80%] rounded-lg py-1 h-[100px] duration-200">
               <img src={state?.image} alt="change" className="w-full h-full" />
             </figure>
           </section>

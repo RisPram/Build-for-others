@@ -157,7 +157,7 @@ const ProjectDetails = ({ whiteMode }) => {
         <h2
           className={`font-semibold ${
             whiteMode ? "text-[#101010]" : "text-[#fff]"
-          } !text-5xl my-20 pt-10`}
+          } !text-4xl lg:!text-5xl my-20 pt-10`}
         >
           More to explore
         </h2>
@@ -174,9 +174,9 @@ const ProjectDetails = ({ whiteMode }) => {
                 </figure>
                 <p className="py-3 !text-[#707070] text-xl">{d?.type}</p>
                 <h3
-                  className={`py-3 font-bold ${
+                  className={`py-3 font-semibold ${
                     whiteMode ? "text-[#101010]" : "text-[#fff]"
-                  } !text-5xl`}
+                  } !text-3xl lg:!text-4xl`}
                 >
                   {d?.title}
                 </h3>

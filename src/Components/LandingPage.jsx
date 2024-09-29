@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { personPhoto, homepageA, bgEffect } from "../Assets";
+import {
+  personPhoto,
+  homepageA,
+  bgEffect,
+  homepageB,
+  homepageC,
+} from "../Assets";
 import Container from "../Common/Container";
 import { skills } from "../Common/RealData";
 import ScrollToTopOfPage from "../Common/ScrollToTopOfPage";
@@ -9,7 +15,7 @@ const LandingPage = ({ whiteMode }) => {
     image: homepageA,
     index: 0,
   });
-  let arr = [homepageA, personPhoto, homepageA, personPhoto, homepageA];
+  let arr = [homepageA, homepageB, homepageC];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -54,8 +60,12 @@ const LandingPage = ({ whiteMode }) => {
             >
               Simplifying tough problems to make accessible solutions with
             </p>
-            <figure className="w-full lg:w-[65%] rounded-lg py-1 h-[100px] duration-200">
-              <img src={state?.image} alt="change" className="w-full h-full" />
+            <figure className="h-[100px] rounded-lg py-1 duration-200">
+              <img
+                src={state?.image}
+                alt="change"
+                className="w-full h-full object-contain"
+              />
             </figure>
           </section>
           <figure className="w-full flex items-center justify-center lg:justify-end rounded-lg">

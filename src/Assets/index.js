@@ -12,8 +12,8 @@ import myProject2 from "./images/myProject2.png";
 import myProject3 from "./images/myProject3.png";
 import myProject4 from "./images/myProject4.png";
 import iconLink from "./images/iconLink.png";
-import linkedIn from "./images/linkedin.png";
-import twitter from "./images/twitter.png";
+import linkedIn from "./images/linkedin.svg";
+import twitter from "./images/twitter.svg";
 import personPhoto from "./images/personPhoto.png";
 //side business images
 import bsideA from "./images/Bside/bsideA.png";
@@ -27,7 +27,8 @@ import pImg from "./images/ProductDetails/problemImage.png";
 
 //homepage about me
 import homepageA from "./images/AboutMe/homepageA.png";
-
+import homepageB from "./images/AboutMe/UXandProductDesign.png";
+import homepageC from "./images/AboutMe/ResearchandDevelopment.png";
 // resume
 import resume from "../Assets/samplepdf.pdf";
 
@@ -55,5 +56,7 @@ export {
   bsideD,
   bsideE,
   homepageA,
+  homepageB,
+  homepageC,
   resume,
 };

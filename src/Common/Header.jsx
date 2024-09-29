@@ -64,7 +64,7 @@ const Header = ({ handleModeChange }) => {
               return (
                 <p
                   key={i}
-                  className={`mx-2 first:!ml-0 last:!mr-0 py-2 px-6 rounded-[30px] hover:bg-babyGreen hover:text-gray-600 duration-300 cursor-pointer text-lg font-bold ${
+                  className={`mx-2 first:!ml-0 last:!mr-0 py-2 px-6 rounded-[30px] hover:bg-babyGreen hover:text-gray-600 duration-300 cursor-pointer text-base font-bold ${
                     state.selectedTab === d?.id
                       ? "bg-babyGreen text-[#101010]"
                       : "text-[#fff]"
@@ -80,7 +80,7 @@ const Header = ({ handleModeChange }) => {
           </section>
           <figure className="ml-2 w-[5%] flex items-center justify-center">
             <img
-              src={state?.mode ? day : night}
+              src={state?.mode ? whiteMode : darkMode}
               alt="mode"
               className="duration-200 object-contain w-[40px] h-[40px] cursor-pointer bg-white rounded-full p-1.5"
               onClick={() => {
@@ -117,7 +117,7 @@ const Header = ({ handleModeChange }) => {
                 <img
                   src={hamburger}
                   alt="mode"
-                  className={`mx-2 duration-200 object-contain w-[30px] h-[30px] cursor-pointer ${
+                  className={`ml-2 duration-200 object-contain w-[30px] h-[30px] cursor-pointer ${
                     !state?.mode ? "bg-white" : "bg-transparent"
                   } rounded-full p-1.5`}
                 />

@@ -25,7 +25,7 @@ const AboutMe = ({ whiteMode }) => {
               Hey, I'm Jay.
             </h2>
             <p
-              className={`py-3 text-xl lg:text-2xl   ${
+              className={`py-3 text-xl   ${
                 whiteMode ? "text-[#525155]" : "text-[#C1C1C1]"
               } whitespace-pre-line`}
             >

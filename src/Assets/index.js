@@ -1,6 +1,5 @@
 import whiteMode from "./images/whiteMode.png";
 import darkMode from "./images/darkMode.png";
-import bgEffect from "./images/bgEffect.png";
 import day from "./images/Day.svg";
 import night from "./images/Night.svg";
 import hamburger from "./images/HamburgerMenu.svg";
@@ -14,7 +13,6 @@ import myProject4 from "./images/myProject4.png";
 import iconLink from "./images/iconLink.png";
 import linkedIn from "./images/linkedin.png";
 import twitter from "./images/twitter.png";
-import personPhoto from "./images/personPhoto.png";
 //side business images
 import bsideA from "./images/Bside/bsideA.png";
 import bsideB from "./images/Bside/bsideB.png";
@@ -26,7 +24,11 @@ import bsideE from "./images/Bside/bsideE.png";
 import pImg from "./images/ProductDetails/problemImage.png";
 
 //homepage about me
+import personPhoto from "./images/AboutMe/personPhoto.jpg";
 import homepageA from "./images/AboutMe/homepageA.png";
+import homepageB from "./images/AboutMe/UXandProductDesign.png";
+import homepageC from "./images/AboutMe/ResearchandDevelopment.png";
+import bgEffectA from "./images/AboutMe/bgEffect.png";
 
 // resume
 import resume from "../Assets/samplepdf.pdf";
@@ -36,7 +38,6 @@ export {
   night,
   hamburger,
   Jlogo,
-  bgEffect,
   whiteMode,
   darkMode,
   logo,
@@ -55,5 +56,8 @@ export {
   bsideD,
   bsideE,
   homepageA,
+  homepageB,
+  homepageC,
+  bgEffectA,
   resume,
 };

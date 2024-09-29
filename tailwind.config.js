@@ -7,7 +7,9 @@ export default {
         libre: ['"Libre Baskerville"', "serif"],
       },
       colors: {
-        baseColor: "#090909",
+        // baseColor: "#090909",
+        baseColor: "#010d26",
+
         whiteMode: "#fff",
         babyGreen: "#8CFF9E",
       },

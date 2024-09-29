@@ -18,7 +18,7 @@ const Footer = ({ whiteMode }) => {
         inner="my-14"
       >
         <section className="flex flex-col items-center justify-center">
-          <p className="text-center py-2  text-2xl text-[#989898] font-libre">
+          <p className="text-center py-2 text-2xl text-[#989898] font-libre">
             Let’s Build Something Together
           </p>
           <p className="text-center py-4 cursor-pointer">
@@ -67,9 +67,9 @@ const Footer = ({ whiteMode }) => {
             `}
         >
           <p className="text-center md:text-left">
-            © {new Date().getFullYear()} Jay Chovatiya. All Rights Reserved
+            © {new Date().getFullYear()} Rishita Pramanick. All Rights Reserved
           </p>
-          <p className="text-center md:text-left">Ahmedabad - India</p>
+          <p className="text-center md:text-left">India (IN)</p>
         </section>
       </Container>
     </>

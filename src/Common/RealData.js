@@ -468,40 +468,26 @@ export const projectDetails = [
 export const businessImages = [
   {
     id: "bIA",
-    image: bsideA,
+    image: myProject1,
     heading: "Procreate",
     subHeading: "Making a digitally animated campfire",
   },
   {
     id: "bIB",
-    image: bsideB,
+    image: myProject2,
     heading: "",
     subHeading: "",
   },
 
   {
-    id: "bIC",
-    name: "B-Side",
-    description:
-      " Personal project for skills enhancement and self-driven initiatives that can help you learn and develop new skills.",
-    heading: "",
-    subHeading: "",
-  },
-  {
     id: "bID",
-    image: bsideC,
+    image: myProject3,
     heading: "Illustrator",
     subHeading: "Bridges logo design",
   },
   {
     id: "bIE",
-    image: bsideD,
-    heading: "",
-    subHeading: "",
-  },
-  {
-    id: "bIF",
-    image: bsideE,
+    image: myProject4,
     heading: "",
     subHeading: "",
   },

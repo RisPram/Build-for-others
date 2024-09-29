@@ -17,14 +17,6 @@ const ProjectDetails = ({ whiteMode }) => {
   let moreProjects = myProject?.filter((d) => {
     return d?.slug !== params.key;
   });
-
-  const handleClickScroll = (target) => {
-    const elementA = document.getElementById(target);
-    if (elementA) {
-      // 👇 Will scroll smoothly to the top of the next section
-      elementA.scrollIntoView({ behavior: "smooth" });
-    }
-  };
   return (
     <>
       <ScrollToTopOfPage />
@@ -44,113 +36,33 @@ const ProjectDetails = ({ whiteMode }) => {
                     className="object-fill w-full h-full rounded-lg"
                   />
                 </figure>
-                <section className="w-full mx-auto">
+                <section className="w-full flex ">
                   <h3
-                    className={`py-6 !text-3xl lg:!text-4xl font-bold ${
+                    className={`w-[80%] py-6 !text-3xl lg:!text-4xl font-bold ${
                       whiteMode ? "text-[#101010]" : "text-[#fff]"
                     }`}
                   >
                     {d?.title}
                   </h3>
-                  <hr />
-                  <div className="py-6 grid grid-cols-1 md:grid-cols-3">
-                    {d?.timeline?.map((x, i) => {
-                      return (
-                        <p
-                          className="my-2 flex flex-col text-xl lg:text-2xl"
-                          key={i}
-                        >
-                          <span className="py-1 text-[#707070] font-semibold">
-                            {x?.title}
-                          </span>
-                          <span
-                            className={`${
-                              whiteMode ? "text-[#101010]" : "text-[#fff]"
-                            }`}
-                          >
-                            {x?.details}
-                          </span>
-                        </p>
-                      );
-                    })}
-                  </div>
-                  <hr />
+                  <p className={`w-[20%] flex items-center justify-center`}>
+                    <p
+                      className={`flex py-2 px-7 text-xl cursor-pointer group  ${
+                        whiteMode ? "text-black" : "text-[#D1D1D1]"
+                      } hover:bg-babyGreen rounded-lg`}
+                      onClick={() => {
+                        window.open();
+                      }}
+                    >
+                      <span className="group-hover:underline font-semibold">
+                        Visit Site
+                      </span>
+                      <img src={iconLink} alt="link" className="ml-2 w-8 h-8" />
+                    </p>
+                  </p>
                 </section>
               </section>
             );
           })}
-        </section>
-        <section className="grid grid-cols-1 md:grid-cols-[30%_70%]  xl:grid-cols-[20%_60%] mt-20">
-          {/* left */}
-          <section className="px-10 py-8 hidden md:flex lg:flex-col items-start">
-            <div className="sticky top-[150px]">
-              {specificList[0]?.details?.map((d, i) => {
-                return (
-                  <p
-                    key={i}
-                    onClick={() => {
-                      handleClickScroll(d?.id);
-                      setState((prev) => {
-                        return { ...prev, selectedTab: d?.title };
-                      });
-                    }}
-                    className={`py-3 text-xl lg:text-2xl cursor-pointer duration-200 font-semibold
-                        ${
-                          whiteMode
-                            ? "hover:text-[#525155]"
-                            : "hover:text-[#fff]"
-                        }
-                        ${
-                          state.selectedTab === d?.title
-                            ? whiteMode
-                              ? "text-[#101010]"
-                              : "text-[#fff]"
-                            : "text-[#a1a1a1]"
-                        }
-                        `}
-                  >
-                    {d?.title}
-                  </p>
-                );
-              })}
-            </div>
-          </section>
-          {/* right */}
-          <section className="w-full flex flex-col">
-            {/* details */}
-            <section className="w-[100%] mx-auto">
-              {specificList[0]?.details?.map((d, i) => {
-                return (
-                  <section
-                    className={` flex flex-col ${
-                      whiteMode ? "text-[#525155]" : "text-[#fff]"
-                    }`}
-                    key={i}
-                  >
-                    <p className={`h-8`} id={`${d?.id}`}></p>
-                    <h3 className="py-2 !text-3xl lg:!text-4xl font-semibold">
-                      {d?.title}
-                    </h3>
-
-                    <p
-                      className="py-4 text-xl text-left lg:text-justify whitespace-pre-line"
-                      dangerouslySetInnerHTML={{
-                        __html: d?.description,
-                      }}
-                    ></p>
-                    {d?.image && (
-                      <figure className="w-full lg:w-[80%] mx-auto h-[450px] py-6">
-                        <img
-                          src={d?.image}
-                          className="object-contain rounded-lg w-full h-full"
-                        />
-                      </figure>
-                    )}
-                  </section>
-                );
-              })}
-            </section>
-          </section>
         </section>
 
         {/* more to explore */}

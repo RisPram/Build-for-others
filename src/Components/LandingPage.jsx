@@ -48,10 +48,10 @@ const LandingPage = ({ whiteMode }) => {
                 whiteMode ? "text-[#616161]" : "text-[#D1D1D1]"
               }`}
             >
-              Hi! I’m Rishita Pramanick.
+              Hi! I’m Jay Chovatiya.
             </h2>
             <h4 className="py-1 text-[#707070] font-libre !text-lg md:!text-2xl">
-              Frontend Developer (React JS) .
+              UI/UX Designer based in Ahmedabad
             </h4>
             <p
               className={`py-5 text-4xl lg:text-5xl !leading-snug ${

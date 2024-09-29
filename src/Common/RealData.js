@@ -465,6 +465,7 @@ export const projectDetails = [
     ],
   },
 ];
+
 export const businessImages = [
   {
     id: "bIA",

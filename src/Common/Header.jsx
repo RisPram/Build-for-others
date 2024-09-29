@@ -171,7 +171,7 @@ const Header = ({ handleModeChange }) => {
                     Switch Mode
                   </figcaption>
                   <img
-                    src={state?.mode ? day : night}
+                    src={state?.mode ? whiteMode : darkMode}
                     alt="mode"
                     className={`mx-2 duration-200 object-contain w-[30px] h-[30px] cursor-pointer ${
                       !state?.mode ? "bg-white" : "bg-transparent"

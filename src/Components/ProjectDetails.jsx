@@ -176,7 +176,7 @@ const ProjectDetails = ({ whiteMode }) => {
                 <h3
                   className={`py-3 font-semibold ${
                     whiteMode ? "text-[#101010]" : "text-[#fff]"
-                  } !text-3xl lg:!text-4xl`}
+                  } !text-3xl`}
                 >
                   {d?.title}
                 </h3>

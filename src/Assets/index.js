@@ -1,6 +1,5 @@
 import whiteMode from "./images/whiteMode.png";
 import darkMode from "./images/darkMode.png";
-import bgEffect from "./images/bgEffect.png";
 import day from "./images/Day.svg";
 import night from "./images/Night.svg";
 import hamburger from "./images/HamburgerMenu.svg";
@@ -29,15 +28,16 @@ import pImg from "./images/ProductDetails/problemImage.png";
 import homepageA from "./images/AboutMe/homepageA.png";
 import homepageB from "./images/AboutMe/UXandProductDesign.png";
 import homepageC from "./images/AboutMe/ResearchandDevelopment.png";
+import bgEffectA from "./images/AboutMe/bgEffect.png";
 // resume
 import resume from "../Assets/samplepdf.pdf";
 
 export {
+  bgEffectA,
   day,
   night,
   hamburger,
   Jlogo,
-  bgEffect,
   whiteMode,
   darkMode,
   logo,

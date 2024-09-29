@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   personPhoto,
   homepageA,
-  bgEffect,
+  bgEffectA,
   homepageB,
   homepageC,
 } from "../Assets";
@@ -36,8 +36,8 @@ const LandingPage = ({ whiteMode }) => {
       <ScrollToTopOfPage />
       <Container
         whiteMode={whiteMode}
-        inner="my-14 items-center"
-        style={{ backgroundImage: `url(${bgEffect})` }}
+        inner="my-20 items-center"
+        style={{ backgroundImage: `url(${bgEffectA})` }}
       >
         <section
           className={`grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-14 my-4`}
@@ -48,10 +48,10 @@ const LandingPage = ({ whiteMode }) => {
                 whiteMode ? "text-[#616161]" : "text-[#D1D1D1]"
               }`}
             >
-              Hi! I’m Jay Chovatiya.
+              Hi! I’m Rishita Pramanick.
             </h2>
             <h4 className="py-1 text-[#707070] font-libre !text-lg md:!text-2xl">
-              UI/UX Designer based in Ahmedabad
+              Frontend Developer (React JS) .
             </h4>
             <p
               className={`py-5 text-4xl lg:text-5xl !leading-snug ${
@@ -60,7 +60,7 @@ const LandingPage = ({ whiteMode }) => {
             >
               Simplifying tough problems to make accessible solutions with
             </p>
-            <figure className="h-[100px] rounded-lg py-1 duration-200">
+            <figure className="w-full rounded-lg py-1 h-[100px] duration-200">
               <img
                 src={state?.image}
                 alt="change"
@@ -72,7 +72,7 @@ const LandingPage = ({ whiteMode }) => {
             <img
               src={personPhoto}
               alt="person"
-              className="object-contain w-[100%] h-full lg:h-[550px]"
+              className="object-contain w-[100%] h-full lg:h-[450px] rounded-lg"
             />
           </figure>
         </section>
@@ -81,7 +81,7 @@ const LandingPage = ({ whiteMode }) => {
       {/* skills */}
       {/* <section className="relative flex overflow-x-hidden mx-auto">
         <section
-          className={`py-5 lg:py-20 flex items-center justify-center animate-marquee whitespace-nowrap  ${
+          className={`py-14 lg:py-20 flex items-center justify-center animate-marquee whitespace-nowrap  ${
             whiteMode ? "bg-whiteMode" : "bg-baseColor"
           }`}
         >
@@ -99,7 +99,7 @@ const LandingPage = ({ whiteMode }) => {
           })}
         </section>
         <section
-          className={`py-5 lg:py-20 border-none absolute top-0 flex items-center justify-center ${
+          className={`py-14 lg:py-20 border-none absolute top-0 flex items-center justify-center ${
             whiteMode ? "bg-whiteMode" : "bg-baseColor"
           } animate-marquee2 whitespace-nowrap`}
         >

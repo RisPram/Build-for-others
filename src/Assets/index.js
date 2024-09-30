@@ -11,7 +11,7 @@ import myProject2 from "./images/myProject2.png";
 import myProject3 from "./images/myProject3.png";
 import myProject4 from "./images/myProject4.png";
 import iconLink from "./images/iconLink.png";
-import linkedIn from "./images/Linkedin.svg";
+import linkedIn from "./images/testlinkedin.svg";
 import twitter from "./images/twitter.svg";
 import personPhoto from "./images/personPhoto.png";
 //side business images

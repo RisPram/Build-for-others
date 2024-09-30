@@ -3,7 +3,7 @@ import {
   myProject2,
   myProject3,
   myProject4,
-  linkedIn,
+  // linkedIn,
   twitter,
   pImg,
   resume,
@@ -124,7 +124,7 @@ export const myProject = [
 export const socialMedia = [
   {
     id: "s1",
-    icon: linkedIn,
+    // icon: linkedIn,
     link: "",
     name: "LinkedIn",
   },

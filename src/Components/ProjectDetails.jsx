@@ -182,7 +182,7 @@ const ProjectDetails = ({ whiteMode }) => {
                 </h3>
 
                 <p
-                  className="py-3 flex items-start justify-center text-xl cursor-pointer group"
+                  className="py-3 flex items-start justify-center text-lg cursor-pointer group"
                   onClick={() => {
                     window.scroll({ top: 0, left: 0, behavior: "smooth" });
                     navigate(`/project-details/${d?.slug}`);

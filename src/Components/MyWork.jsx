@@ -17,7 +17,7 @@ const MyProject = ({ whiteMode }) => {
                 i % 2 == 0 ? "order-2 lg:order-1" : "order-2 lg:order-2"
               }`}
             >
-              <p className="mb-2 py-1 sm:py-2 !text-black font-semibold bg-babyGreen rounded-[30px] w-fit px-4 sm:px-6 text-base sm:text-lg">
+              <p className="mb-2 py-1 sm:py-2 !text-black font-caveat font-semibold bg-babyGreen rounded-[30px] w-fit px-4 sm:px-6 text-lg sm:text-xl">
                 {d?.type}
               </p>
               <h3
@@ -35,7 +35,7 @@ const MyProject = ({ whiteMode }) => {
                 {d?.description}
               </p>
               <p
-                className={`py-3 flex items-start justify-center text-xl cursor-pointer group  ${
+                className={`py-3 flex items-start justify-center text-lg cursor-pointer group  ${
                   whiteMode ? "text-[#525155]" : "text-[#D1D1D1]"
                 }`}
                 onClick={() => {

@@ -117,8 +117,8 @@ const Header = ({ handleModeChange }) => {
             {state.openMenu && (
               <div
                 className={`${
-                  state.mode ? "bg-gray-300" : "bg-baseColor"
-                }  z-50 w-[90vw] h-[275px] rounded-md py-2 px-1 absolute -top-11 right-0 flex flex-col menu-animate-slide-topBottom items-center justify-center`}
+                  state.mode ? "bg-[#fff]" : "bg-baseColor"
+                }  z-50 w-[90vw] h-[400px] rounded-md py-2 px-1 absolute -top-11 right-0 flex flex-col menu-animate-slide-topBottom`}
               >
                 <p className="flex items-end justify-end w-full py-2">
                   <Close
@@ -127,25 +127,27 @@ const Header = ({ handleModeChange }) => {
                     }`}
                   />
                 </p>
-                {menu?.map((d, i) => {
-                  return (
-                    <p
-                      key={i}
-                      className={`my-1 py-1 px-10 rounded-[30px] hover:bg-babyGreen hover:text-gray-600 duration-300 cursor-pointer text-lg font-bold ${
-                        state.selectedTab === d?.id
-                          ? "bg-babyGreen text-[#101010]"
-                          : state.mode
-                          ? "text-baseColor"
-                          : "text-[#fff]"
-                      }`}
-                      onClick={() => {
-                        handleMenuClick(d);
-                      }}
-                    >
-                      {d?.title}
-                    </p>
-                  );
-                })}
+                <div className="flex flex-col items-center justify-center">
+                  {menu?.map((d, i) => {
+                    return (
+                      <p
+                        key={i}
+                        className={`my-1 py-2.5 px-10 rounded-[30px] hover:bg-babyGreen hover:text-gray-600 duration-300 cursor-pointer text-lg font-bold ${
+                          state.selectedTab === d?.id
+                            ? "bg-babyGreen text-[#101010]"
+                            : state.mode
+                            ? "text-baseColor"
+                            : "text-[#fff]"
+                        }`}
+                        onClick={() => {
+                          handleMenuClick(d);
+                        }}
+                      >
+                        {d?.title}
+                      </p>
+                    );
+                  })}
+                </div>
                 <figure
                   className="ml-2 w-full flex items-center justify-center px-5 cursor-pointer"
                   onClick={() => {
@@ -160,7 +162,7 @@ const Header = ({ handleModeChange }) => {
                       state.mode ? "text-baseColor" : "text-[#fff]"
                     } my-1 py-2  rounded-[30px] duration-300 cursor-pointer text-lg font-bold`}
                   >
-                    Switch Mode
+                    {state?.mode ? "Light Mode" : "Dark Mode"}
                   </figcaption>
                   <img
                     src={state?.mode ? whiteMode : darkMode}

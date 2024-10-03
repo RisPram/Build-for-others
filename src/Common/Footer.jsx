@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { iconLink } from "../Assets";
 import Container from "./Container";
 import { menu, socialMedia } from "./RealData";
 const Footer = ({ whiteMode }) => {
@@ -36,19 +37,22 @@ const Footer = ({ whiteMode }) => {
           <div className="py-6 flex items-end">
             {socialMedia?.map((d, i) => {
               return (
-                <figure
+                <div
                   key={i}
                   className={` ${
-                    whiteMode ? "bg-[#d1d1d1]" : "bg-[#5F5F5F]"
-                  } p-2  hover:bg-babyGreen cursor-pointer rounded-xl mr-2 flex items-center justify-center`}
+                    whiteMode ? "text-black" : "text-[#fff]"
+                  } p-2  hover:text-babyGreen cursor-pointer mr-2 flex items-center justify-center`}
                 >
-                  <img src={d?.icon} alt="smedia" className="mr-2 w-8 h-8" />
-                </figure>
+                  <span className="group-hover:underline font-semibold text-xl">
+                    {d?.name}
+                  </span>
+                  <img src={iconLink} alt="link" className="ml-1 w-8 h-8" />
+                </div>
               );
             })}
           </div>
           <p
-            className={`text-center text-lg md:text-xl pt-8 pb-2 ${
+            className={`text-center text-lg md:text-xl pt-4 pb-2 ${
               whiteMode ? "text-black" : "text-[#707070]"
             }`}
           >

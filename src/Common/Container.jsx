@@ -31,7 +31,7 @@ const Container = ({ whiteMode, outer, inner, children, segment, style }) => {
       style={style}
     >
       <section
-        className={`w-[90%] lg:w-[75%] flex  flex-col bg-transparent ${
+        className={`w-[90%] lg:w-[70%] flex  flex-col bg-transparent ${
           inner ?? ""
         }`}
       >

@@ -28,7 +28,7 @@ const MyProject = ({ whiteMode }) => {
                 {d?.title}
               </h3>
               <p
-                className={`py-3 text-xl whitespace-pre-line ${
+                className={`py-3 text-xl whitespace-pre-line w-full lg:w-[80%] ${
                   whiteMode ? "text-[#525155]" : "text-[#D1D1D1]"
                 }`}
               >

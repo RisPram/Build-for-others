@@ -82,7 +82,7 @@ const ProjectDetails = ({ whiteMode }) => {
         </section>
         <section className="grid grid-cols-1 md:grid-cols-[30%_70%]  xl:grid-cols-[20%_60%] mt-20">
           {/* left */}
-          <section className="px-10 py-8 hidden md:flex lg:flex-col items-start">
+          <section className="pr-10 py-8 hidden md:flex lg:flex-col items-start">
             <div className="sticky top-[150px]">
               {specificList[0]?.details?.map((d, i) => {
                 return (
@@ -94,7 +94,7 @@ const ProjectDetails = ({ whiteMode }) => {
                         return { ...prev, selectedTab: d?.title };
                       });
                     }}
-                    className={`py-3 text-xl lg:text-2xl cursor-pointer duration-200 font-semibold
+                    className={`py-1.5 text-base lg:text-lg cursor-pointer duration-200 font-semibold
                         ${
                           whiteMode
                             ? "hover:text-[#525155]"
@@ -133,16 +133,16 @@ const ProjectDetails = ({ whiteMode }) => {
                     </h3>
 
                     <p
-                      className="py-4 text-xl text-left lg:text-justify whitespace-pre-line"
+                      className="py-4 text-xl text-left whitespace-pre-line"
                       dangerouslySetInnerHTML={{
                         __html: d?.description,
                       }}
                     ></p>
                     {d?.image && (
-                      <figure className="w-full lg:w-[80%] mx-auto h-[450px] py-6">
+                      <figure className="w-full h-[550px] py-6">
                         <img
                           src={d?.image}
-                          className="object-contain rounded-lg w-full h-full"
+                          className="object-scale-down rounded-lg w-full h-full"
                         />
                       </figure>
                     )}
@@ -161,20 +161,22 @@ const ProjectDetails = ({ whiteMode }) => {
         >
           More to explore
         </h2>
-        <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 mb-20">
-          {moreProjects?.map((d, i) => {
+        <section className="grid grid-cols-1 md:grid-cols-2  gap-10 mb-20">
+          {moreProjects?.slice(0, 2)?.map((d, i) => {
             return (
               <section className="flex flex-col items-start" key={i}>
-                <figure className={``}>
+                <figure className={`w-full mb-3`}>
                   <img
                     src={d?.img}
                     alt="project"
-                    className="object-contain w-full h-[300px]"
+                    className="object-fit rounded-2xl  w-full h-[400px]"
                   />
                 </figure>
-                <p className="py-3 !text-[#707070] text-xl">{d?.type}</p>
+                <p className="py-1.5 text-3xl text-[#e8ca42] font-caveat">
+                  {d?.type}
+                </p>
                 <h3
-                  className={`py-3 font-semibold ${
+                  className={`py-1.5 font-semibold ${
                     whiteMode ? "text-[#101010]" : "text-[#fff]"
                   } !text-3xl`}
                 >

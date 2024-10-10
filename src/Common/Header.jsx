@@ -60,7 +60,7 @@ const Header = ({ handleModeChange }) => {
               return (
                 <p
                   key={i}
-                  className={`mx-2 first:!ml-0 last:!mr-0 py-2 px-6 rounded-[30px] hover:bg-babyGreen hover:text-gray-600 duration-300 cursor-pointer text-base font-bold ${
+                  className={`mx-2 first:!ml-0 last:!mr-0 py-2 px-6 rounded-[30px] hover:bg-gray-500 duration-300 cursor-pointer text-base font-bold ${
                     state.selectedTab === d?.id
                       ? "bg-babyGreen text-[#101010]"
                       : "text-[#fff]"

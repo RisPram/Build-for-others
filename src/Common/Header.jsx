@@ -11,7 +11,23 @@ const Header = ({ handleModeChange }) => {
     selectedTab: "menuA",
     mode: false,
     openMenu: false,
+    scrollPosition: 0,
   });
+
+  const handleScroll = () => {
+    const position = window.scrollY; // The number of pixels the document is currently scrolled vertically
+    setState((prev) => {
+      return { ...prev, scrollPosition: position };
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
@@ -42,13 +58,24 @@ const Header = ({ handleModeChange }) => {
   };
   return (
     <section
-      className={`fixed py-4 top-0 z-50 w-full flex items-center justify-center bg-cover bg-center
-       backdrop-blur-sm ${state.mode ? "!bg-[#ffffffa3]" : "!bg-[#0c0c0ca3]"}
-    duration-300`}
+      className={`fixed top-0 z-50 py-4 w-full flex items-center justify-center bg-cover bg-center
+       backdrop-blur-sm ${
+         state.mode ? "bg-[#ffffffa3]" : "bg-[#0c0c0ca3]"
+       } duration-300`}
     >
       <section className={`w-[90%] lg:w-[70%] flex flex-col bg-transparent`}>
-        <nav className="flex w-full h-full">
-          <figure className="w-[10%] flex items-start">
+        <nav
+          className={`flex w-full h-full ${
+            state.scrollPosition > 100 ? "justify-center" : "xl:justify-end"
+          }`}
+        >
+          <figure
+            className={`flex items-center ${
+              state.scrollPosition > 100
+                ? "w-fit mr-3 animate-move-in"
+                : "w-[10%] animate-move-corner-left"
+            }`}
+          >
             <img
               src={Jlogo}
               alt="logo"
@@ -58,14 +85,24 @@ const Header = ({ handleModeChange }) => {
               }}
             />
           </figure>
+
           {/* above 768px-md */}
-          <section className="w-[90%] hidden md:flex justify-center xl:justify-end">
-            <section className="w-fit bg-[#3a3939]/40 p-2 rounded-[30px] backdrop-blur-sm flex items-center justify-end">
+          <section
+            className={`hidden md:flex duration-300  ${
+              state.scrollPosition > 100
+                ? "w-fit animate-move-in"
+                : "w-[90%] justify-end animate-move-corner-right"
+            }`}
+          >
+            {/* menu */}
+            <section
+              className={`w-max bg-[#3a3939]/30 p-2 rounded-[30px] backdrop-blur-sm flex items-center justify-end`}
+            >
               {menu?.map((d, i) => {
                 return (
                   <p
                     key={i}
-                    className={`mx-2 first:!ml-0 last:!mr-0 py-2 px-6 rounded-[30px] hover:bg-gray-500 duration-300 cursor-pointer text-base font-bold ${
+                    className={`w-max mx-2 first:!ml-0 last:!mr-0 py-2 px-6 rounded-[30px] hover:bg-gray-500 duration-300 cursor-pointer text-base font-bold ${
                       state.selectedTab === d?.id
                         ? "bg-babyGreen text-[#101010]"
                         : "text-[#fff]"
@@ -79,7 +116,12 @@ const Header = ({ handleModeChange }) => {
                 );
               })}
             </section>
-            <figure className="ml-2 w-[10%] xl:w-[5%] flex items-center justify-center">
+            {/* mode switch */}
+            <figure
+              className={`ml-2 ${
+                state.scrollPosition > 100 ? "w-[10%]" : "w-[5%]"
+              } flex items-center justify-center`}
+            >
               <img
                 src={state?.mode ? whiteMode : darkMode}
                 alt="mode"

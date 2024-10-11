@@ -72,8 +72,8 @@ const Header = ({ handleModeChange }) => {
           <figure
             className={`flex items-center ${
               state.scrollPosition > 100
-                ? "w-fit mr-3 animate-move-in"
-                : "w-[10%] animate-move-corner-left"
+                ? "md:w-fit md:mr-3 md:animate-move-in"
+                : "md:w-[10%] md:animate-move-corner-left"
             }`}
           >
             <img
@@ -154,7 +154,7 @@ const Header = ({ handleModeChange }) => {
                   <img
                     src={hamburger}
                     alt="mode"
-                    className={`ml-2 duration-200 object-contain w-[30px] h-[30px] cursor-pointer ${
+                    className={`ml-2 duration-200 object-contain w-[40px] h-[40px] cursor-pointer ${
                       !state?.mode ? "bg-white" : "bg-transparent"
                     } rounded-full p-1.5`}
                   />

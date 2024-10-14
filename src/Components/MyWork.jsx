@@ -1,9 +1,24 @@
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { iconLink } from "../Assets";
 import { myProject } from "../Common/RealData";
 import Container from "../Common/Container";
 const MyProject = ({ whiteMode }) => {
   const navigate = useNavigate();
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [state, setState] = useState({
+    customCursor: false,
+    position: { x: 0, y: 0 },
+  });
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setState((prev) => {
+        return { ...prev, position: { x: e.clientX, y: e.clientY } };
+      });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
   return (
     <Container whiteMode={whiteMode} inner="py-20">
       {myProject?.map((d, i) => {
@@ -55,16 +70,42 @@ const MyProject = ({ whiteMode }) => {
 
             <figure
               className={`p-2 ${
-                i % 2 == 0
-                  ? " order-1 lg:order-2 hover:skew-y-3"
-                  : " order-1 lg:order-1 hover:-skew-y-3"
-              } hover:duration-300`}
+                i % 2 == 0 ? " order-1 lg:order-2" : " order-1 lg:order-1"
+              }`}
+              onMouseEnter={() => {
+                setState((prev) => {
+                  return { ...prev, customCursor: true };
+                });
+              }}
+              onMouseLeave={() => {
+                setState((prev) => {
+                  return { ...prev, customCursor: false };
+                });
+              }}
             >
               <img
                 src={d?.img}
                 alt="project"
                 className="object-contain w-full h-full"
               />
+              {state.customCursor && (
+                <div className="cursor-none">
+                  <div
+                    className="border-[1px] border-[#989898] bg-[#fff]/20 backdrop-blur-xl duration-300 fixed text-[11px] 
+                  rounded-full p-7 text-center text-black font-semibold"
+                    style={{
+                      left: `${state.position.x}px`,
+                      top: `${state.position.y}px`,
+                      transform: `translate(-50%, -50%)`,
+                    }}
+                    onClick={() => {
+                      navigate(`/project-details/${d?.slug}`);
+                    }}
+                  >
+                    View <br /> project
+                  </div>
+                </div>
+              )}
             </figure>
           </section>
         );

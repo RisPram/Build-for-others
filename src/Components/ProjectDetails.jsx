@@ -28,7 +28,7 @@ const ProjectDetails = ({ whiteMode }) => {
   return (
     <>
       <ScrollToTopOfPage />
-      <Container whiteMode={whiteMode}>
+      <Container whiteMode={whiteMode} inner="my-8 lg:my-20">
         {/* particular project details */}
         {/* introdetails part1 */}
         <section className="flex items-center justify-center">

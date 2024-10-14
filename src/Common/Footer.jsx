@@ -15,11 +15,11 @@ const Footer = ({ whiteMode }) => {
         whiteMode={whiteMode}
         outer={`${
           whiteMode ? "bg-[#fff]" : "bg-[#101010]"
-        } border-t-[1px] border-[#989898`}
+        } border-t-[1px] border-[#989898]`}
         inner="my-14"
       >
         <section className="flex flex-col items-center justify-center">
-          <p className="text-center py-2  text-2xl text-[#989898] font-libre">
+          <p className="text-center py-2 text-2xl text-[#989898] font-libre">
             Let’s Build Something Together
           </p>
           <p className="text-center py-4 cursor-pointer">

@@ -55,8 +55,10 @@ const MyProject = ({ whiteMode }) => {
 
             <figure
               className={`p-2 ${
-                i % 2 == 0 ? " order-1 lg:order-2" : " order-1 lg:order-1"
-              }`}
+                i % 2 == 0
+                  ? " order-1 lg:order-2 hover:skew-y-3"
+                  : " order-1 lg:order-1 hover:-skew-y-3"
+              } hover:duration-300`}
             >
               <img
                 src={d?.img}

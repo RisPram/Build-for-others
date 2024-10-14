@@ -1,7 +1,7 @@
 import whiteMode from "./images/whiteMode.png";
 import darkMode from "./images/darkMode.png";
-import day from "./images/Day.svg";
-import night from "./images/Night.svg";
+import day from "./images/Sun_White.svg";
+import night from "./images/Moon_Black.svg";
 import hamburger from "./images/HamburgerMenu.svg";
 import Jlogo from "./images/JLogo.svg";
 // import logo from "./images/logo.png";

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Menu, Close } from "@mui/icons-material";
 import Container from "./Container";
 import { menu } from "./RealData";
-import { Jlogo, whiteMode, darkMode, day, night, hamburger } from "../Assets";
+import { Jlogo, whiteMode, darkMode, hamburger } from "../Assets";
 const Header = ({ handleModeChange }) => {
   const navigate = useNavigate();
 
@@ -123,9 +123,9 @@ const Header = ({ handleModeChange }) => {
               } flex items-center justify-center`}
             >
               <img
-                src={state?.mode ? whiteMode : darkMode}
+                src={!state?.mode ? whiteMode : darkMode}
                 alt="mode"
-                className="duration-200 object-contain w-[40px] h-[40px] cursor-pointer bg-white rounded-full p-1.5"
+                className="duration-200 object-contain w-[25px] h-[25px] cursor-pointer"
                 onClick={() => {
                   handleModeChange(!state.mode);
                   setState((prev) => {
@@ -212,7 +212,7 @@ const Header = ({ handleModeChange }) => {
                       {state?.mode ? "Light Mode" : "Dark Mode"}
                     </figcaption>
                     <img
-                      src={state?.mode ? whiteMode : darkMode}
+                      src={!state?.mode ? whiteMode : darkMode}
                       alt="mode"
                       className={`mx-2 duration-200 object-contain w-[30px] h-[30px] cursor-pointer ${
                         !state?.mode ? "bg-white" : "bg-transparent"

@@ -5,7 +5,7 @@ import AllRoutes from "./routes";
 
 const Index = () => {
   const [state, setState] = useState({
-    whiteMode: false,
+    whiteMode: true,
   });
 
   const handleModeChange = (data) => {

@@ -14,9 +14,9 @@ const Header = ({ handleModeChange }) => {
     scrollPosition: 0,
   });
 
-  useEffect(() => {
-    localStorage.setItem("darkmode", JSON.stringify(state.mode));
-  }, [state.mode]);
+  // useEffect(() => {
+  //   localStorage.setItem("darkmode", JSON.stringify(state.mode));
+  // }, [state.mode]);
   const handleScroll = () => {
     const position = window.scrollY; // The number of pixels the document is currently scrolled vertically
     setState((prev) => {
@@ -63,7 +63,7 @@ const Header = ({ handleModeChange }) => {
     <section
       className={`fixed top-0 z-50 py-4 w-full flex items-center justify-center bg-cover bg-center
        backdrop-blur-sm ${
-         state.mode ? "bg-[#ffffffa3]" : "bg-[#0c0c0ca3]"
+         !state.mode ? "bg-[#ffffffa3]" : "bg-[#0c0c0ca3]"
        } duration-300`}
     >
       <section className={`w-[90%] lg:w-[70%] flex flex-col bg-transparent`}>
@@ -109,10 +109,8 @@ const Header = ({ handleModeChange }) => {
                 return (
                   <p
                     key={i}
-                    className={`w-max mx-2 first:!ml-0 last:!mr-0 py-2 px-6 rounded-[30px] hover:bg-gray-500 duration-300 cursor-pointer text-base font-bold ${
-                      state.selectedTab === d?.id
-                        ? "bg-babyGreen text-[#101010]"
-                        : "text-[#fff]"
+                    className={`w-max mx-2 text-[#101010] first:!ml-0 last:!mr-0 py-2 px-6 rounded-[30px] hover:bg-gray-100 duration-300 cursor-pointer text-base font-bold ${
+                      state.selectedTab === d?.id ? "bg-babyGreen " : ""
                     }`}
                     onClick={() => {
                       handleMenuClick(d);
@@ -124,7 +122,7 @@ const Header = ({ handleModeChange }) => {
               })}
             </section>
             {/* mode switch */}
-            <figure
+            {/* <figure
               className={`ml-2 ${
                 state.scrollPosition > 100 ? "w-[10%]" : "w-[5%]"
               } flex items-center justify-center`}
@@ -140,7 +138,7 @@ const Header = ({ handleModeChange }) => {
                   });
                 }}
               />
-            </figure>
+            </figure> */}
           </section>
 
           {/* below 768px responsive hamburger */}
@@ -171,13 +169,13 @@ const Header = ({ handleModeChange }) => {
               {state.openMenu && (
                 <div
                   className={`${
-                    state.mode ? "bg-[#fff]" : "bg-baseColor"
-                  }  z-50 w-[90vw] h-[400px] rounded-md py-2 px-1 absolute -top-11 right-0 flex flex-col menu-animate-slide-topBottom`}
+                    !state.mode ? "bg-[#fff]" : "bg-baseColor"
+                  }  z-50 w-[90vw] h-[300px] rounded-md py-2 px-1 absolute -top-11 right-0 flex flex-col menu-animate-slide-topBottom`}
                 >
                   <p className="flex items-end justify-end w-full py-2">
                     <Close
                       className={`!h-8 !w-8 ${
-                        state.mode ? "text-baseColor" : "text-whiteMode"
+                        !state.mode ? "text-baseColor" : "text-whiteMode"
                       }`}
                     />
                   </p>
@@ -186,12 +184,15 @@ const Header = ({ handleModeChange }) => {
                       return (
                         <p
                           key={i}
-                          className={`my-1 py-2.5 px-10 rounded-[30px] hover:bg-babyGreen hover:text-gray-600 duration-300 cursor-pointer text-lg font-bold ${
-                            state.selectedTab === d?.id
-                              ? "bg-babyGreen text-[#101010]"
-                              : state.mode
-                              ? "text-baseColor"
-                              : "text-[#fff]"
+                          // className={`my-1 py-2.5 px-10 rounded-[30px] text-[#101010]  hover:bg-babyGreen hover:text-gray-200 duration-300 cursor-pointer text-lg font-bold ${
+                          //   state.selectedTab === d?.id
+                          //     ? "bg-babyGreen"
+                          //     : state.mode
+                          //     ? "text-baseColor"
+                          //     : "text-[#fff]"
+                          // }`}
+                          className={`my-1 py-2.5 px-10 rounded-[30px] text-[#101010]  hover:bg-babyGreen hover:text-gray-600 duration-300 cursor-pointer text-lg font-bold ${
+                            state.selectedTab === d?.id ? "bg-babyGreen" : ""
                           }`}
                           onClick={() => {
                             handleMenuClick(d);
@@ -202,7 +203,7 @@ const Header = ({ handleModeChange }) => {
                       );
                     })}
                   </div>
-                  <figure
+                  {/* <figure
                     className="ml-2 w-full flex items-center justify-center px-5 cursor-pointer"
                     onClick={() => {
                       handleModeChange(!state.mode);
@@ -223,7 +224,7 @@ const Header = ({ handleModeChange }) => {
                       alt="mode"
                       className={`mx-2 duration-200 object-contain w-[22px] h-[22px] cursor-pointer`}
                     />
-                  </figure>
+                  </figure> */}
                 </div>
               )}
             </section>

@@ -1,7 +1,5 @@
-import whiteMode from "./images/whiteMode.png";
+import whiteMode from "./images/sun.svg";
 import darkMode from "./images/darkMode.png";
-import day from "./images/Sun_White.svg";
-import night from "./images/Moon_Black.svg";
 import hamburger from "./images/HamburgerMenu.svg";
 import Jlogo from "./images/JLogo.svg";
 // import logo from "./images/logo.png";
@@ -34,8 +32,6 @@ import resume from "../Assets/samplepdf.pdf";
 
 export {
   bgEffectA,
-  day,
-  night,
   hamburger,
   Jlogo,
   whiteMode,

@@ -14,6 +14,9 @@ const Header = ({ handleModeChange }) => {
     scrollPosition: 0,
   });
 
+  useEffect(() => {
+    localStorage.setItem("darkmode", JSON.stringify(state.mode));
+  }, [state.mode]);
   const handleScroll = () => {
     const position = window.scrollY; // The number of pixels the document is currently scrolled vertically
     setState((prev) => {

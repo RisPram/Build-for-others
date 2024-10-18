@@ -26,6 +26,16 @@ const MyProject = ({ whiteMode }) => {
           <section
             key={i}
             className={`grid grid-cols-1 lg:grid-cols-2 my-14 gap-14`}
+            onMouseEnter={() => {
+              setState((prev) => {
+                return { ...prev, customCursor: true };
+              });
+            }}
+            onMouseLeave={() => {
+              setState((prev) => {
+                return { ...prev, customCursor: false };
+              });
+            }}
           >
             <section
               className={`flex items-start justify-center flex-col  ${
@@ -54,7 +64,7 @@ const MyProject = ({ whiteMode }) => {
                 {d?.description}
               </p>
               <p
-                className={`py-3 flex items-start justify-center text-lg cursor-pointer group  ${
+                className={`lg:hidden py-3 flex items-start justify-center text-lg cursor-pointer group  ${
                   whiteMode ? "text-[#525155]" : "text-[#D1D1D1]"
                 }`}
                 onClick={() => {
@@ -72,16 +82,6 @@ const MyProject = ({ whiteMode }) => {
               className={`p-2 ${
                 i % 2 == 0 ? " order-1 lg:order-2" : " order-1 lg:order-1"
               }`}
-              onMouseEnter={() => {
-                setState((prev) => {
-                  return { ...prev, customCursor: true };
-                });
-              }}
-              onMouseLeave={() => {
-                setState((prev) => {
-                  return { ...prev, customCursor: false };
-                });
-              }}
             >
               <img
                 src={d?.img}
@@ -91,7 +91,7 @@ const MyProject = ({ whiteMode }) => {
               {state.customCursor && (
                 <div className="cursor-none">
                   <div
-                    className="border-[1px] border-[#989898] bg-[#fff]/20 backdrop-blur-xl duration-300 fixed text-[11px] 
+                    className="border-[1px] border-[#989898] bg-[#fff]/20 backdrop-blur-xl duration-300 fixed text-base 
                   rounded-full p-7 text-center text-black font-semibold"
                     style={{
                       left: `${state.position.x}px`,

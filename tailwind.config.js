@@ -27,8 +27,8 @@ export default {
           "100%": { transform: "translateX(0)", opacity: "1" },
         },
         moveToEndLeft: {
-          "0%": { transform: "translateX(-100%)", opacity: "0" },
-          "100%": { transform: "translateX(0)", opacity: "1" },
+          "0%": { transform: "translateX(0%)", opacity: "0" },
+          "100%": { transform: "translateX(-10%)", opacity: "1" },
         },
         moveToEndRight: {
           "0%": { transform: "translateX(10%)", opacity: "0" },
@@ -39,8 +39,8 @@ export default {
         marquee: "marquee 25s linear infinite",
         marquee2: "marquee2 25s linear infinite",
         "move-in": "moveToCenter 1s ease-out forwards",
-        "move-corner-left": "moveToEndLeft 1s ease-out forwards",
-        "move-corner-right": "moveToEndRight 1s ease-out forwards",
+        "move-corner-left": "moveToEndLeft .5s linear forwards",
+        "move-corner-right": "moveToEndRight .5s linear forwards",
       },
     },
   },

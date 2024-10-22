@@ -61,12 +61,14 @@ const Header = ({ handleModeChange }) => {
   };
   return (
     <section
-      className={`fixed top-0 z-50 py-4 w-full flex items-center justify-center bg-cover bg-center
+      className={` fixed top-0 z-50 py-4 w-full flex items-center justify-center bg-cover bg-center
        backdrop-blur-sm ${
          !state.mode ? "bg-[#ffffffa3]" : "bg-[#0c0c0ca3]"
        } duration-300`}
     >
-      <section className={`w-[90%] lg:w-[70%] flex flex-col bg-transparent`}>
+      <section
+        className={`rounded-[50px] border-gray-200 border-2 w-[90%] lg:w-[70%] flex flex-col bg-transparent`}
+      >
         <nav
           className={`flex w-full h-full ${
             state.scrollPosition > 100 ? "justify-center" : "xl:justify-end"

@@ -20,12 +20,17 @@ const MyProject = ({ whiteMode }) => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
   return (
-    <Container whiteMode={whiteMode} inner="py-20">
+    <Container whiteMode={whiteMode} inner="py-10 lg:py-20">
+      <h2
+        className={`block lg:hidden mb-4 text-center font-semibold !text-3xl underline`}
+      >
+        My Contributions
+      </h2>
       {myProject?.map((d, i) => {
         return (
           <section
             key={i}
-            className={`grid grid-cols-1 lg:grid-cols-2 my-14 gap-14`}
+            className={`grid grid-cols-1 lg:grid-cols-2 my-8 lg:my-14 gap-14`}
             onMouseEnter={() => {
               setState((prev) => {
                 return { ...prev, customCursor: true };
@@ -50,21 +55,21 @@ const MyProject = ({ whiteMode }) => {
                 {d?.type}
               </p>
               <h3
-                className={`py-3 font-bold !text-3xl lg:!text-4xl ${
+                className={`py-1.5 lg:py-3 font-bold !text-3xl lg:!text-4xl ${
                   whiteMode ? "text-[#101010]" : "text-[#fff]"
                 }`}
               >
                 {d?.title}
               </h3>
               <p
-                className={`py-3 text-xl whitespace-pre-line w-full lg:w-[80%] ${
+                className={`py-1.5 lg:py-3 text-xl whitespace-pre-line w-full lg:w-[80%] ${
                   whiteMode ? "text-[#525155]" : "text-[#D1D1D1]"
                 }`}
               >
                 {d?.description}
               </p>
               <p
-                className={`lg:hidden py-3 flex items-start justify-center text-lg cursor-pointer group  ${
+                className={`lg:hidden py-1.5 lg:py-3 flex items-start justify-center text-lg cursor-pointer group  ${
                   whiteMode ? "text-[#525155]" : "text-[#D1D1D1]"
                 }`}
                 onClick={() => {

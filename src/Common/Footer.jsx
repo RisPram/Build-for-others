@@ -52,7 +52,7 @@ const Footer = ({ whiteMode }) => {
             })}
           </div>
           <p
-            className={`text-center text-lg md:text-xl pt-4 pb-2 ${
+            className={`text-center text-sm md:text-xl pt-4 pb-2 ${
               whiteMode ? "text-black" : "text-[#707070]"
             }`}
           >

@@ -84,7 +84,7 @@ const MyProject = ({ whiteMode }) => {
             </section>
 
             <figure
-              className={`p-2 ${
+              className={`p-2 lg:p-0 ${
                 i % 2 == 0 ? " order-1 lg:order-2" : " order-1 lg:order-1"
               }`}
             >

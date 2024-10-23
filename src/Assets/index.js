@@ -1,6 +1,7 @@
 import whiteMode from "./images/sun.svg";
 import darkMode from "./images/darkMode.png";
 import hamburger from "./images/HamburgerMenu.svg";
+import close from "./images/Close.svg";
 import Jlogo from "./images/JLogo.svg";
 // import logo from "./images/logo.png";
 import logo from "./images/logoB.png";
@@ -33,6 +34,7 @@ import resume from "../Assets/samplepdf.pdf";
 export {
   bgEffectA,
   hamburger,
+  close,
   Jlogo,
   whiteMode,
   darkMode,

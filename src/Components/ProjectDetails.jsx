@@ -28,20 +28,20 @@ const ProjectDetails = ({ whiteMode }) => {
   return (
     <>
       <ScrollToTopOfPage />
-      <Container whiteMode={whiteMode} inner="my-8 lg:my-20">
+      <Container whiteMode={whiteMode} inner="my-16 lg:my-28">
         {/* particular project details */}
         {/* introdetails part1 */}
         <section className="flex items-center justify-center">
           {specificList[0]?.introdetails?.map((d, i) => {
             return (
               <section
-                className="my-10 w-[90%] lg:w-[70%] flex flex-col items-center justify-center"
+                className="my-10 w-[90%] xl:w-[70%] flex flex-col items-center justify-center"
                 key={i}
               >
-                <figure className="w-full h-[350px] md:h-[600px] pb-6">
+                <figure className="w-full h-auto md:h-[550px] pb-0 lg:pb-6">
                   <img
                     src={d?.image}
-                    className="object-fill w-full h-full rounded-lg"
+                    className="object-contain lg:object-fill w-full h-full rounded-lg"
                   />
                 </figure>
                 <section className="w-full mx-auto">
@@ -80,7 +80,7 @@ const ProjectDetails = ({ whiteMode }) => {
             );
           })}
         </section>
-        <section className="grid grid-cols-1 md:grid-cols-[30%_70%]  xl:grid-cols-[20%_60%] mt-20">
+        <section className="grid grid-cols-1 md:grid-cols-[30%_70%]  xl:grid-cols-[20%_60%] mt-4 lg:mt-10">
           {/* left */}
           <section className="pr-10 py-8 hidden md:flex lg:flex-col items-start">
             <div className="sticky top-[150px]">
@@ -128,7 +128,7 @@ const ProjectDetails = ({ whiteMode }) => {
                     key={i}
                   >
                     <p className={`h-8`} id={`${d?.id}`}></p>
-                    <h3 className="py-2 !text-3xl lg:!text-4xl font-semibold">
+                    <h3 className="pb-2 !text-3xl lg:!text-4xl font-semibold">
                       {d?.title}
                     </h3>
 
@@ -139,10 +139,10 @@ const ProjectDetails = ({ whiteMode }) => {
                       }}
                     ></p>
                     {d?.image && (
-                      <figure className="w-full h-[550px] py-6">
+                      <figure className="w-full h-auto md:h-[450px] py-2 xl:py-6">
                         <img
                           src={d?.image}
-                          className="object-scale-down rounded-lg w-full h-full"
+                          className="object-contain lg:object-fill rounded-lg w-full h-full"
                         />
                       </figure>
                     )}
@@ -157,7 +157,7 @@ const ProjectDetails = ({ whiteMode }) => {
         <h2
           className={`font-semibold ${
             whiteMode ? "text-[#101010]" : "text-[#fff]"
-          } !text-4xl lg:!text-5xl my-20 pt-10`}
+          } !text-4xl lg:!text-5xl my-10 lg:my-20 pt-10`}
         >
           More to explore
         </h2>
@@ -169,7 +169,7 @@ const ProjectDetails = ({ whiteMode }) => {
                   <img
                     src={d?.img}
                     alt="project"
-                    className="object-fit rounded-2xl  w-full h-[400px]"
+                    className="object-contain md:object-fill rounded-2xl w-full h-auto md:h-[400px]"
                   />
                 </figure>
                 <p className="py-1.5 text-3xl text-[#e8ca42] font-caveat">

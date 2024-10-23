@@ -1,1 +1,8 @@
-<svg fill="none" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="m3 6c0-.55228.44772-1 1-1h16c.5523 0 1 .44772 1 1s-.4477 1-1 1h-16c-.55228 0-1-.44772-1-1zm0 6c0-.5523.44772-1 1-1h16c.5523 0 1 .4477 1 1s-.4477 1-1 1h-16c-.55228 0-1-.4477-1-1zm0 6c0-.5523.44772-1 1-1h16c.5523 0 1 .4477 1 1s-.4477 1-1 1h-16c-.55228 0-1-.4477-1-1z" fill="rgb(0,0,0)" fill-rule="evenodd"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+  <g id="Group_174907" data-name="Group 174907" transform="translate(22443 22197)">
+    <path id="Path_56883" data-name="Path 56883" d="M15,0A15,15,0,1,1,0,15,15,15,0,0,1,15,0Z" transform="translate(-22443 -22197)" fill="#fff"/>
+    <g id="Group_174915" data-name="Group 174915" transform="translate(-22443 -22197)">
+      <path id="Path_56887" data-name="Path 56887" d="M15,0A14.992,14.992,0,1,0,25.609,4.391,15,15,0,0,0,15,0Zm5.5,21.548H9.5a1.047,1.047,0,1,1,0-2.093h11a1.047,1.047,0,0,1,0,2.093Zm0-5.5H9.5a1.047,1.047,0,0,1,0-2.093h11a1.047,1.047,0,1,1,0,2.093Zm0-5.5H9.5a1.047,1.047,0,0,1,0-2.093h11a1.047,1.047,0,1,1,0,2.093Z"/>
+    </g>
+  </g>
+</svg>

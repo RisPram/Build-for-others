@@ -19,7 +19,7 @@ const Business = ({ whiteMode }) => {
     <>
       <ScrollToTopOfPage />
 
-      <Container whiteMode={whiteMode} inner="my-8 lg:my-20">
+      <Container whiteMode={whiteMode} inner="my-16 lg:my-28">
         <section className="grid py-10 lg:grid-cols-[30%_33%_33%] gap-[2%] lg:grid-rows-[450px_350px_400px]">
           {businessImages?.map((d, i) => {
             return (

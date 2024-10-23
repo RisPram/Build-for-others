@@ -67,24 +67,28 @@ const Header = ({ handleModeChange }) => {
        } duration-300`}
     >
       <section
-        className={`rounded-[50px] border-gray-200 border-2 w-[90%] lg:w-[70%] flex flex-col bg-transparent`}
+        className={` w-[90%] lg:w-[70%] flex flex-col bg-transparent
+            ${state.scrollPosition > 100 ? "items-center" : ""}
+            `}
       >
         <nav
-          className={`flex w-full h-full ${
-            state.scrollPosition > 100 ? "justify-center" : "xl:justify-end"
+          className={`rounded-[50px] border-gray-200 border-2 flex h-full ${
+            state.scrollPosition > 100
+              ? "w-full justify-end md:justify-center md:w-fit md:px-3"
+              : "xl:justify-end w-full"
           }`}
         >
           <figure
             className={`flex items-center ${
               state.scrollPosition > 100
-                ? "md:w-fit md:mr-3 md:animate-move-in"
+                ? "md:w-fit md:mr-3 md:animate-moveToCenterfromleft"
                 : "md:w-[10%] md:animate-move-corner-left"
             }`}
           >
             <img
               src={Jlogo}
               alt="logo"
-              className="object-contain w-14 h-14 cursor-pointer"
+              className="object-contain w-10 h-10 md:w-14 md:h-14 cursor-pointer"
               onClick={() => {
                 navigate("/");
               }}
@@ -95,7 +99,7 @@ const Header = ({ handleModeChange }) => {
           <section
             className={`hidden md:flex duration-300  ${
               state.scrollPosition > 100
-                ? "w-fit animate-move-in"
+                ? "w-fit animate-moveToCenterfromRight"
                 : "w-[90%] justify-end animate-move-corner-right"
             }`}
           >
@@ -147,7 +151,8 @@ const Header = ({ handleModeChange }) => {
           <section className="w-[90%] flex md:hidden flex-col items-end justify-center">
             <section
               ref={optionsBlockRef}
-              className="flex flex-col md:hidden relative items-center justify-end"
+              className={`
+               flex flex-col md:hidden relative items-center justify-end`}
               onClick={() => {
                 setTimeout(() => {
                   setState((prev) => {
@@ -156,79 +161,52 @@ const Header = ({ handleModeChange }) => {
                 }, 200);
               }}
             >
-              <span className="cursor-pointer relative">
-                {!state.openMenu && (
+              <span className={`cursor-pointer relative`}>
+                {!state.openMenu ? (
                   <img
                     src={hamburger}
                     alt="mode"
-                    className={`ml-2 duration-200 object-contain w-[40px] h-[40px] cursor-pointer ${
-                      !state?.mode ? "bg-white" : "bg-transparent"
-                    } rounded-full p-1.5`}
+                    className={`ml-2 duration-200 object-contain w-[40px] h-[40px] cursor-pointer bg-transparent rounded-full p-1.5`}
                   />
+                ) : (
+                  <div
+                    className={`${!state.mode ? "bg-[#fff]" : "bg-baseColor"}  
+                  z-50 w-[90vw] h-[300px] rounded-3xl border-2 border-gray-200 py-2 px-1 absolute -top-6 right-0 flex flex-col menu-animate-slide-topBottom `}
+                  >
+                    <p className="flex items-end justify-end w-full py-2">
+                      <Close
+                        className={`!h-8 !w-8 ${
+                          !state.mode ? "text-baseColor" : "text-whiteMode"
+                        }`}
+                      />
+                    </p>
+                    <div className="flex flex-col items-center justify-center">
+                      {menu?.map((d, i) => {
+                        return (
+                          <p
+                            key={i}
+                            // className={`my-1 py-2.5 px-10 rounded-[30px] text-[#101010]  hover:bg-babyGreen hover:text-gray-200 duration-300 cursor-pointer text-lg font-bold ${
+                            //   state.selectedTab === d?.id
+                            //     ? "bg-babyGreen"
+                            //     : state.mode
+                            //     ? "text-baseColor"
+                            //     : "text-[#fff]"
+                            // }`}
+                            className={`my-1 py-2.5 px-10 rounded-[30px] text-[#101010]  hover:bg-babyGreen hover:text-gray-600 duration-300 cursor-pointer text-lg font-bold ${
+                              state.selectedTab === d?.id ? "bg-babyGreen" : ""
+                            }`}
+                            onClick={() => {
+                              handleMenuClick(d);
+                            }}
+                          >
+                            {d?.title}
+                          </p>
+                        );
+                      })}
+                    </div>
+                  </div>
                 )}
               </span>
-
-              {state.openMenu && (
-                <div
-                  className={`${
-                    !state.mode ? "bg-[#fff]" : "bg-baseColor"
-                  }  z-50 w-[90vw] h-[300px] rounded-md py-2 px-1 absolute -top-11 right-0 flex flex-col menu-animate-slide-topBottom`}
-                >
-                  <p className="flex items-end justify-end w-full py-2">
-                    <Close
-                      className={`!h-8 !w-8 ${
-                        !state.mode ? "text-baseColor" : "text-whiteMode"
-                      }`}
-                    />
-                  </p>
-                  <div className="flex flex-col items-center justify-center">
-                    {menu?.map((d, i) => {
-                      return (
-                        <p
-                          key={i}
-                          // className={`my-1 py-2.5 px-10 rounded-[30px] text-[#101010]  hover:bg-babyGreen hover:text-gray-200 duration-300 cursor-pointer text-lg font-bold ${
-                          //   state.selectedTab === d?.id
-                          //     ? "bg-babyGreen"
-                          //     : state.mode
-                          //     ? "text-baseColor"
-                          //     : "text-[#fff]"
-                          // }`}
-                          className={`my-1 py-2.5 px-10 rounded-[30px] text-[#101010]  hover:bg-babyGreen hover:text-gray-600 duration-300 cursor-pointer text-lg font-bold ${
-                            state.selectedTab === d?.id ? "bg-babyGreen" : ""
-                          }`}
-                          onClick={() => {
-                            handleMenuClick(d);
-                          }}
-                        >
-                          {d?.title}
-                        </p>
-                      );
-                    })}
-                  </div>
-                  {/* <figure
-                    className="ml-2 w-full flex items-center justify-center px-5 cursor-pointer"
-                    onClick={() => {
-                      handleModeChange(!state.mode);
-                      setState((prev) => {
-                        return { ...prev, mode: !state.mode };
-                      });
-                    }}
-                  >
-                    <figcaption
-                      className={` ${
-                        state.mode ? "text-baseColor" : "text-[#fff]"
-                      } my-1 py-2  rounded-[30px] duration-300 cursor-pointer text-lg font-bold`}
-                    >
-                      {!state?.mode ? "Light Mode" : "Dark Mode"}
-                    </figcaption>
-                    <img
-                      src={!state?.mode ? whiteMode : darkMode}
-                      alt="mode"
-                      className={`mx-2 duration-200 object-contain w-[22px] h-[22px] cursor-pointer`}
-                    />
-                  </figure> */}
-                </div>
-              )}
             </section>
           </section>
         </nav>

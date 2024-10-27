@@ -44,7 +44,7 @@ export default {
           "100%": { opacity: "0" },
         },
         heightIncrease: {
-          "0%": { height: "140px" },
+          "0%": { height: "130px" },
           "100%": { height: "290px" },
         },
       },

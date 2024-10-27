@@ -79,11 +79,11 @@ const Header = ({ handleModeChange }) => {
             state.scrollPosition > 100
               ? "w-full justify-end md:justify-center md:w-fit md:px-3"
               : "xl:justify-end w-full"
-          }
+          } 
           ${
-            !state.openMenu
-              ? "border-b-0 rounded-b-0 rounded-t-[30px] border-t-2"
-              : "border-2 rounded-[50px]"
+            state.openMenu
+              ? "border-2 rounded-[50px]"
+              : "border-b-0 rounded-b-0 rounded-t-[30px] border-t-2 md:border-2 md:rounded-[50px]"
           }`}
         >
           <figure
@@ -209,7 +209,6 @@ const Header = ({ handleModeChange }) => {
                               ? "border-gray-200"
                               : "border-transparent"
                           }
-                          ${!state.openMenu ? "" : "animate-fadeOut"}
                           `}
                           onClick={() => {
                             handleMenuClick(d);

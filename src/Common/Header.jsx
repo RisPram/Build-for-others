@@ -72,11 +72,17 @@ const Header = ({ handleModeChange }) => {
             `}
       >
         <nav
-          className={`p-2 lg:px-2 lg:py-1 rounded-[50px] border-gray-200 border-2 flex h-full ${
+          className={`h-[60px] md:h-[70px] p-2 lg:px-2 lg:py-1 border-gray-200 flex  ${
             state.scrollPosition > 100
               ? "w-full justify-end md:justify-center md:w-fit md:px-3"
               : "xl:justify-end w-full"
-          }`}
+          }
+          ${
+            !state.openMenu
+              ? "border-b-0 rounded-b-0 rounded-t-[30px] border-t-2"
+              : "border-2 rounded-[50px]"
+          } 
+              `}
         >
           <figure
             className={`flex items-center ${
@@ -153,70 +159,69 @@ const Header = ({ handleModeChange }) => {
           <section className="w-[90%] flex md:hidden flex-col items-end justify-center">
             <section
               ref={optionsBlockRef}
-              className={`
-               flex flex-col md:hidden relative items-center justify-end`}
-              onClick={() => {
-                setTimeout(() => {
-                  setState((prev) => {
-                    return { ...prev, openMenu: !state.openMenu };
-                  });
-                }, 200);
-              }}
+              className={`flex flex-col md:hidden relative items-center justify-end`}
             >
               <span className={`cursor-pointer relative`}>
-                {!state.openMenu ? (
-                  <img
-                    src={hamburger}
-                    alt="menu"
-                    className={`ml-2 duration-200 object-contain w-[40px] h-[40px] cursor-pointer`}
-                  />
-                ) : (
-                  <div
-                    className={`${
-                      !state.mode ? "bg-[#fff]" : "bg-baseColor"
-                    } z-50 w-[90vw] h-[320px] rounded-3xl border-2 border-gray-200 p-2 absolute -top-7 -right-2 flex flex-col menu-animate-slide-topBottom `}
-                  >
-                    <p className="flex items-end justify-end w-full py-2">
-                      <img
-                        src={close}
-                        alt="menu"
-                        className={`ml-2 duration-200 object-contain w-[40px] h-[40px] cursor-pointer`}
-                      />
-                      {/* <Close
-                        className={`!h-8 !w-8 ${
-                          !state.mode ? "text-baseColor" : "text-whiteMode"
-                        }`}
-                      /> */}
-                    </p>
-                    <div className="flex flex-col items-center justify-center">
-                      {menu?.map((d, i) => {
-                        return (
-                          <p
-                            key={i}
-                            // className={`my-1 py-2.5 px-10 rounded-[30px] text-[#101010]  hover:bg-babyGreen hover:text-gray-200 duration-300 cursor-pointer text-lg font-bold ${
-                            //   state.selectedTab === d?.id
-                            //     ? "bg-babyGreen"
-                            //     : state.mode
-                            //     ? "text-baseColor"
-                            //     : "text-[#fff]"
-                            // }`}
-                            className={`my-1 py-2.5 px-10 rounded-[30px] text-[#101010] border-2  hover:bg-gray-200 hover:text-gray-600 duration-300 cursor-pointer text-lg font-semibold ${
-                              state.selectedTab === d?.id
-                                ? "border-gray-200"
-                                : "border-transparent"
-                            }`}
-                            onClick={() => {
-                              handleMenuClick(d);
-                            }}
-                          >
-                            {d?.title}
-                          </p>
-                        );
-                      })}
-                    </div>
-                  </div>
-                )}
+                <img
+                  src={`${state.openMenu ? hamburger : close}`}
+                  alt="menu"
+                  onClick={() => {
+                    setTimeout(() => {
+                      setState((prev) => {
+                        return { ...prev, openMenu: !state.openMenu };
+                      });
+                    }, 200);
+                  }}
+                  className={`ml-2 duration-200 object-contain w-[40px] h-[40px] cursor-pointer`}
+                />
               </span>
+
+              {/* menulist container */}
+              {!state.openMenu && (
+                <div
+                  className={`
+                     
+                    ${
+                      !state.mode ? "bg-[#fff]" : "bg-baseColor"
+                    } z-50 w-[90vw] rounded-b-[30px] border-b-2 border-gray-200 p-2 flex flex-col absolute top-[48px] right-[-8px] 
+                 `}
+                >
+                  <div
+                    className={`flex flex-col items-center justify-center
+                    ${
+                      !state.openMenu
+                        ? "animate-heightIncrease"
+                        : "animate-fadeOut"
+                    }
+                    `}
+                  >
+                    {menu?.map((d, i) => {
+                      return (
+                        <p
+                          key={i}
+                          // className={`my-1 py-2.5 px-10 rounded-[30px] text-[#101010]  hover:bg-babyGreen hover:text-gray-200 duration-300 cursor-pointer text-lg font-bold ${
+                          //   state.selectedTab === d?.id
+                          //     ? "bg-babyGreen"
+                          //     : state.mode
+                          //     ? "text-baseColor"
+                          //     : "text-[#fff]"
+                          // }`}
+                          className={`my-1 py-2.5 px-10 rounded-[30px] text-[#101010] border-2  hover:bg-gray-200 hover:text-gray-600 duration-300 cursor-pointer text-lg font-semibold ${
+                            state.selectedTab === d?.id
+                              ? "border-gray-200"
+                              : "border-transparent"
+                          }`}
+                          onClick={() => {
+                            handleMenuClick(d);
+                          }}
+                        >
+                          {d?.title}
+                        </p>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
             </section>
           </section>
         </nav>

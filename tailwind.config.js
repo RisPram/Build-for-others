@@ -40,7 +40,12 @@ export default {
         },
         fadeOut: {
           "0%": { opacity: "1" },
+          "50%": { opacity: "0.6" },
           "100%": { opacity: "0" },
+        },
+        heightIncrease: {
+          "0%": { height: "10px" },
+          "100%": { height: "300px" },
         },
       },
       animation: {
@@ -50,7 +55,8 @@ export default {
         moveToCenterfromleft: "moveToCenterfromleft .4s ease-out forwards",
         "move-corner-left": "moveToEndLeft .4s ease-out forwards",
         "move-corner-right": "moveToEndRight .4s ease-out forwards",
-        fadeOut: "fadeOut 2s ease-in-out forwards",
+        fadeOut: "fadeOut 1s ease-in-out forwards",
+        heightIncrease: "heightIncrease 1s ease-in-out forwards",
       },
     },
   },

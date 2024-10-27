@@ -62,7 +62,6 @@ const Header = ({ handleModeChange }) => {
         : window.open(data?.download, "_blank", "fullscreen=yes");
     }, 200);
   };
-  console.log("openMenu>>", state.openMenu);
   return (
     <section
       className={`fixed top-0 z-50 py-4 w-full flex items-center justify-center bg-cover bg-center
@@ -191,11 +190,7 @@ const Header = ({ handleModeChange }) => {
                 >
                   <div
                     className={`flex flex-col items-center justify-center
-                    ${
-                      !state.openMenu
-                        ? "animate-heightIncrease"
-                        : "animate-fadeOut"
-                    }
+                    ${!state.openMenu ? "animate-heightIncrease" : ""}
                     `}
                   >
                     {menu?.map((d, i) => {
@@ -213,7 +208,9 @@ const Header = ({ handleModeChange }) => {
                             state.selectedTab === d?.id
                               ? "border-gray-200"
                               : "border-transparent"
-                          }`}
+                          }
+                          ${!state.openMenu ? "" : "animate-fadeOut"}
+                          `}
                           onClick={() => {
                             handleMenuClick(d);
                           }}

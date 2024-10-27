@@ -44,8 +44,8 @@ export default {
           "100%": { opacity: "0" },
         },
         heightIncrease: {
-          "0%": { height: "10px" },
-          "100%": { height: "300px" },
+          "0%": { height: "140px" },
+          "100%": { height: "290px" },
         },
       },
       animation: {
@@ -56,7 +56,7 @@ export default {
         "move-corner-left": "moveToEndLeft .4s ease-out forwards",
         "move-corner-right": "moveToEndRight .4s ease-out forwards",
         fadeOut: "fadeOut 1s ease-in-out forwards",
-        heightIncrease: "heightIncrease 1s ease-in-out forwards",
+        heightIncrease: "heightIncrease 0.5s ease-in-out forwards",
       },
     },
   },

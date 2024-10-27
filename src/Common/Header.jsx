@@ -54,11 +54,15 @@ const Header = ({ handleModeChange }) => {
     });
 
     setTimeout(() => {
+      setState((prev) => {
+        return { ...prev, openMenu: true };
+      });
       data?.id !== "menuD"
         ? navigate(`${data?.link}`)
         : window.open(data?.download, "_blank", "fullscreen=yes");
     }, 200);
   };
+  console.log("openMenu>>", state.openMenu);
   return (
     <section
       className={`fixed top-0 z-50 py-4 w-full flex items-center justify-center bg-cover bg-center
@@ -81,8 +85,7 @@ const Header = ({ handleModeChange }) => {
             !state.openMenu
               ? "border-b-0 rounded-b-0 rounded-t-[30px] border-t-2"
               : "border-2 rounded-[50px]"
-          } 
-              `}
+          }`}
         >
           <figure
             className={`flex items-center ${

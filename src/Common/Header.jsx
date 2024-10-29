@@ -55,35 +55,40 @@ const Header = ({ handleModeChange }) => {
 
     setTimeout(() => {
       setState((prev) => {
-        return { ...prev, openMenu: true };
+        return { ...prev, openMenu: false };
       });
       data?.id !== "menuD"
         ? navigate(`${data?.link}`)
         : window.open(data?.download, "_blank", "fullscreen=yes");
     }, 200);
   };
+  console.log("openMenu>>", state.openMenu);
   return (
     <section
       className={`fixed top-0 z-50 py-4 w-full flex items-center justify-center bg-cover bg-center
-       backdrop-blur-sm ${
-         !state.mode ? "bg-[#ffffffa3]" : "bg-[#0c0c0ca3]"
-       } duration-300`}
+       backdrop-blur-sm 
+      
+       ${!state.mode ? "bg-[#ffffffa3]" : "bg-[#0c0c0ca3]"} duration-300`}
     >
       <section
-        className={`w-[90%] lg:w-[70%] flex flex-col bg-transparent
+        className={`w-[90%] lg:w-[70%] flex flex-col 
+            
+        bg-transparent
             ${state.scrollPosition > 100 ? "items-center" : ""}
             `}
       >
         <nav
-          className={`h-[60px] md:h-[70px] p-2 lg:px-2 lg:py-1 border-gray-200 flex  ${
-            state.scrollPosition > 100
-              ? "w-full justify-end md:justify-center md:w-fit md:px-3"
-              : "xl:justify-end w-full"
-          } 
+          className={`h-[60px] md:h-[70px] p-2 lg:px-2 lg:py-1 border-gray-200 flex 
+             ${state.openMenu ? "bg-white" : "bg-transparent"}
+            ${
+              state.scrollPosition > 100
+                ? "w-full justify-end md:justify-center md:w-fit md:px-3"
+                : "xl:justify-end w-full"
+            } border-2 rounded-[50px]
           ${
-            state.openMenu
-              ? "border-2 rounded-[50px]"
-              : "border-b-0 rounded-b-0 rounded-t-[30px] border-t-2 md:border-2 md:rounded-[50px]"
+            !state.openMenu
+              ? ""
+              : "border-b-transparent rounded-t-3xl rounded-b-none"
           }`}
         >
           <figure
@@ -165,7 +170,7 @@ const Header = ({ handleModeChange }) => {
             >
               <span className={`cursor-pointer relative`}>
                 <img
-                  src={`${state.openMenu ? hamburger : close}`}
+                  src={`${!state.openMenu ? hamburger : close}`}
                   alt="menu"
                   onClick={() => {
                     setTimeout(() => {
@@ -179,18 +184,18 @@ const Header = ({ handleModeChange }) => {
               </span>
 
               {/* menulist container */}
-              {!state.openMenu && (
+              {state.openMenu && (
                 <div
                   className={`
                      
                     ${
                       !state.mode ? "bg-[#fff]" : "bg-baseColor"
-                    } z-50 w-[90vw] rounded-b-[30px] border-b-2 border-gray-200 p-2 flex flex-col absolute top-[48px] right-[-8px] 
+                    } z-50 w-[90vw] rounded-b-[30px] border-x-[2px] border-b-[2px] border-gray-200 flex flex-col absolute top-[48px] right-[-10px] 
                  `}
                 >
                   <div
                     className={`flex flex-col items-center justify-center
-                    ${!state.openMenu ? "animate-heightIncrease" : ""}
+                    ${state.openMenu ? "animate-heightIncrease" : ""}
                     `}
                   >
                     {menu?.map((d, i) => {

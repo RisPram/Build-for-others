@@ -186,12 +186,9 @@ const Header = ({ handleModeChange }) => {
               {/* menulist container */}
               {state.openMenu && (
                 <div
-                  className={`
-                     
-                    ${
-                      !state.mode ? "bg-[#fff]" : "bg-baseColor"
-                    } z-50 w-[90vw] rounded-b-[30px] border-x-[2px] border-b-[2px] border-gray-200 flex flex-col absolute top-[48px] right-[-10px] 
-                 `}
+                  className={` ${
+                    !state.mode ? "bg-[#fff]" : "bg-baseColor"
+                  } z-50 w-[90vw] rounded-b-[30px] border-x-[2px] border-b-[2px] border-gray-200 flex flex-col absolute top-[48px] right-[-10px] `}
                 >
                   <div
                     className={`flex flex-col items-center justify-center

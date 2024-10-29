@@ -57,7 +57,7 @@ const ProjectDetails = ({ whiteMode }) => {
                     {d?.timeline?.map((x, i) => {
                       return (
                         <p
-                          className="my-2 flex flex-col text-xl lg:text-2xl"
+                          className="my-2 flex flex-col text-lg lg:text-xl xl:text-2xl"
                           key={i}
                         >
                           <span className="py-1 text-[#707070] font-semibold">
@@ -133,7 +133,7 @@ const ProjectDetails = ({ whiteMode }) => {
                     </h3>
 
                     <p
-                      className="py-4 text-xl text-left whitespace-pre-line"
+                      className="py-4 text-lg lg:text-xl text-left whitespace-pre-line"
                       dangerouslySetInnerHTML={{
                         __html: d?.description,
                       }}

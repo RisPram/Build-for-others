@@ -62,7 +62,7 @@ const MyProject = ({ whiteMode }) => {
                 {d?.title}
               </h3>
               <p
-                className={`py-1.5 lg:py-3 text-xl whitespace-pre-line w-full lg:w-[80%] ${
+                className={`py-1.5 lg:py-3 text-lg md:text-xl whitespace-pre-line w-full lg:w-[80%] ${
                   whiteMode ? "text-[#525155]" : "text-[#D1D1D1]"
                 }`}
               >
@@ -94,7 +94,7 @@ const MyProject = ({ whiteMode }) => {
                 className="object-contain w-full h-full"
               />
               {state.customCursor && (
-                <div className="cursor-none">
+                <div className="hidden lg:block cursor-none">
                   <div
                     className="border-[1px] border-[#989898] bg-[#fff]/20 backdrop-blur-xl duration-300 fixed text-base 
                   rounded-full p-7 text-center text-black font-semibold"

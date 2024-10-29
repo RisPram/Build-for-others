@@ -64,9 +64,7 @@ const Header = ({ handleModeChange }) => {
   return (
     <section
       className={`fixed top-0 z-50 py-4 w-full flex items-center justify-center bg-cover bg-center
-       backdrop-blur-sm ${
-         !state.mode ? "bg-[#ffffffa3]" : "bg-[#0c0c0ca3]"
-       } duration-300`}
+       ${!state.mode ? "" : "bg-[#0c0c0ca3]"} duration-300`}
     >
       <section
         className={`w-[90%] lg:w-[70%] flex flex-col bg-transparent ${
@@ -74,7 +72,7 @@ const Header = ({ handleModeChange }) => {
         } `}
       >
         <nav
-          className={`h-[60px] md:h-[70px] p-2 lg:px-2 lg:py-1 border-gray-200 flex 
+          className={`backdrop-blur-sm h-[60px] md:h-[70px] p-2 lg:px-2 lg:py-1 border-gray-200 flex 
              ${state.openMenu ? "bg-white" : "bg-transparent"}
             ${
               state.scrollPosition > 100

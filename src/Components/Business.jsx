@@ -20,7 +20,7 @@ const Business = ({ whiteMode }) => {
       <ScrollToTopOfPage />
 
       <Container whiteMode={whiteMode} inner="my-16 lg:my-28">
-        <section className="grid py-10 lg:grid-cols-[30%_33%_33%] gap-[2%] lg:grid-rows-[450px_350px_400px]">
+        <section className="grid !mb-32 md:!mb-96 lg:!mb-0 py-10 grid-cols-1 grid-rows-auto lg:grid-cols-[30%_33%_33%] gap-[2%]  lg:grid-rows-[450px_350px_400px]">
           {businessImages?.map((d, i) => {
             return (
               <figure
@@ -48,7 +48,7 @@ const Business = ({ whiteMode }) => {
                     } object-contain lg:object-cover w-full h-full rounded-xl`}
                   />
                 ) : (
-                  <figcaption className=" h-full w-full flex flex-col items-start justify-center p-2">
+                  <figcaption className="h-full w-full flex flex-col items-start justify-center p-2">
                     <p
                       className={`text-4xl font-semibold py-3 text-left ${
                         whiteMode ? "text-[#101010]" : "text-[#fff]"

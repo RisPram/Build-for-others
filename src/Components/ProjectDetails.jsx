@@ -128,7 +128,7 @@ const ProjectDetails = ({ whiteMode }) => {
                     key={i}
                   >
                     <p className={`h-8`} id={`${d?.id}`}></p>
-                    <h3 className="pb-2 !text-3xl lg:!text-4xl font-semibold">
+                    <h3 className="pb-2 !text-3xl lg:!text-4xl font-semibold text-[#252525]">
                       {d?.title}
                     </h3>
 

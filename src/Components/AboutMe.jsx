@@ -7,25 +7,25 @@ const AboutMe = ({ whiteMode }) => {
   return (
     <>
       <ScrollToTopOfPage />
-      <Container whiteMode={whiteMode} inner="my-16 lg:my-28">
-        <section className="grid grid-cols-1 xl:grid-cols-2 gap-14 w-full">
-          <figure className="w-full  h-[400px] xl:h-full rounded-lg flex items-start justify-start">
+      <Container whiteMode={whiteMode} inner="mt-20 mb-16 lg:my-32">
+        <section className="grid grid-cols-1 xl:grid-cols-2 gap-6 xl:gap-14 w-full">
+          <figure className="w-full h-[400px] xl:h-full rounded-lg flex items-start justify-start">
             <img
               src={personPhoto}
               alt="person"
-              className="object-contain w-full h-full"
+              className="object-contain xl:object-fill w-full h-full"
             />
           </figure>
           <section className="flex flex-col items-start">
             <h2
-              className={`py-1.5 lg:py-3 !text-3xl lg:!text-5xl font-bold ${
+              className={`pb-1 lg:pb-3 !text-3xl lg:!text-5xl font-bold ${
                 whiteMode ? "text-[#101010]" : "text-[#fff]"
               }`}
             >
               Hey, I'm Jay.
             </h2>
             <p
-              className={`py-1.5 lg:py-3 text-lg lg:text-xl   ${
+              className={`py-1 lg:py-3 text-lg lg:text-xl   ${
                 whiteMode ? "text-[#525155]" : "text-[#C1C1C1]"
               } whitespace-pre-line`}
             >

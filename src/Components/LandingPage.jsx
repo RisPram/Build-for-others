@@ -36,7 +36,7 @@ const LandingPage = ({ whiteMode }) => {
       <ScrollToTopOfPage />
       <Container
         whiteMode={whiteMode}
-        outer="pt-20 pb-6"
+        outer="p-6 mt-10 lg:mt-32"
         inner="my-8 lg:my-20 items-center"
         style={{ backgroundImage: `url(${bgEffectA})` }}
       >

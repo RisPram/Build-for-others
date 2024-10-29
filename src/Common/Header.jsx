@@ -1,7 +1,5 @@
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Menu, Close } from "@mui/icons-material";
-import Container from "./Container";
 import { menu } from "./RealData";
 import { Jlogo, whiteMode, darkMode, hamburger, close } from "../Assets";
 const Header = ({ handleModeChange }) => {
@@ -62,20 +60,18 @@ const Header = ({ handleModeChange }) => {
         : window.open(data?.download, "_blank", "fullscreen=yes");
     }, 200);
   };
-  console.log("openMenu>>", state.openMenu);
+
   return (
     <section
       className={`fixed top-0 z-50 py-4 w-full flex items-center justify-center bg-cover bg-center
-       backdrop-blur-sm 
-      
-       ${!state.mode ? "bg-[#ffffffa3]" : "bg-[#0c0c0ca3]"} duration-300`}
+       backdrop-blur-sm ${
+         !state.mode ? "bg-[#ffffffa3]" : "bg-[#0c0c0ca3]"
+       } duration-300`}
     >
       <section
-        className={`w-[90%] lg:w-[70%] flex flex-col 
-            
-        bg-transparent
-            ${state.scrollPosition > 100 ? "items-center" : ""}
-            `}
+        className={`w-[90%] lg:w-[70%] flex flex-col bg-transparent ${
+          state.scrollPosition > 100 ? "items-center" : ""
+        } `}
       >
         <nav
           className={`h-[60px] md:h-[70px] p-2 lg:px-2 lg:py-1 border-gray-200 flex 

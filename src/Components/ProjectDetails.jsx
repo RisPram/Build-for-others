@@ -57,7 +57,7 @@ const ProjectDetails = ({ whiteMode }) => {
                     {d?.timeline?.map((x, i) => {
                       return (
                         <p
-                          className="my-2 flex flex-col text-lg lg:text-xl xl:text-2xl"
+                          className="my-2 flex flex-col text-lg lg:text-xl"
                           key={i}
                         >
                           <span className="py-1 text-[#707070] font-semibold">

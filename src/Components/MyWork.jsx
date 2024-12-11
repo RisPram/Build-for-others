@@ -28,50 +28,46 @@ const MyProject = ({ whiteMode }) => {
       </h2>
       {myProject?.map((d, i) => {
         return (
-          <section
-            key={i}
-            className={`grid grid-cols-1 lg:grid-cols-2 my-8 lg:my-14 gap-14`}
-            onMouseEnter={() => {
-              setState((prev) => {
-                return { ...prev, customCursor: true };
-              });
-            }}
-            onMouseLeave={() => {
-              setState((prev) => {
-                return { ...prev, customCursor: false };
-              });
-            }}
-          >
+          <>
+            {/* web */}
             <section
-              className={`flex items-start justify-center flex-col  ${
-                i % 2 == 0 ? "order-2 lg:order-1" : "order-2 lg:order-2"
-              }`}
+              key={i}
+              className={`hidden lg:block w-[90%] xl:w-[80%] my-8 lg:my-14 mx-auto relative cursor-pointer`}
+              // onMouseEnter={() => {
+              //   setState((prev) => {
+              //     return { ...prev, customCursor: true };
+              //   });
+              // }}
+              // onMouseLeave={() => {
+              //   setState((prev) => {
+              //     return { ...prev, customCursor: false };
+              //   });
+              // }}
+              onClick={() => {
+                navigate(`/project-details/${d?.slug}`);
+              }}
             >
-              <p
-                className={`mb-2 py-1 sm:py-2 font-caveat font-semibold rounded-[30px] w-fit text-lg sm:text-2xl
-                ${whiteMode ? "text-[#101010]" : "text-[#ffd859]"}
+              <section
+                className={`absolute left-14 xl:left-20 top-1/2 -translate-y-1/2 flex items-start justify-center flex-col z-50`}
+              >
+                <p
+                  className={`mb-2 py-1 font-caveat font-semibold rounded-[30px] w-fit text-lg sm:text-xl text-[#ffd859] `}
+                >
+                  {d?.type}
+                </p>
+                <h3
+                  className={`py-1.5 font-bold !text-2xl lg:!text-3xl text-[#fff]`}
+                >
+                  {d?.title}
+                </h3>
+                <p
+                  className={`py-1.5 text-sm md:text-base w-full lg:w-[60%] text-[#D1D1D1]
                 `}
-              >
-                {d?.type}
-              </p>
-              <h3
-                className={`py-1.5 lg:py-3 font-bold !text-3xl lg:!text-4xl ${
-                  whiteMode ? "text-[#101010]" : "text-[#fff]"
-                }`}
-              >
-                {d?.title}
-              </h3>
-              <p
-                className={`py-1.5 lg:py-3 text-lg md:text-xl whitespace-pre-line w-full lg:w-[80%] ${
-                  whiteMode ? "text-[#525155]" : "text-[#D1D1D1]"
-                }`}
-              >
-                {d?.description}
-              </p>
-              <p
-                className={`lg:hidden py-1.5 lg:py-3 flex items-start justify-center text-lg cursor-pointer group  ${
-                  whiteMode ? "text-[#525155]" : "text-[#D1D1D1]"
-                }`}
+                >
+                  {d?.description}
+                </p>
+                {/* <p
+                className={`py-1.5 flex items-start justify-center text-lg cursor-pointer group text-[#D1D1D1]`}
                 onClick={() => {
                   navigate(`/project-details/${d?.slug}`);
                 }}
@@ -80,20 +76,16 @@ const MyProject = ({ whiteMode }) => {
                   See My Work
                 </span>
                 <img src={iconLink} alt="link" className="ml-2 w-8 h-8" />
-              </p>
-            </section>
+              </p> */}
+              </section>
 
-            <figure
-              className={`p-2 lg:p-0 ${
-                i % 2 == 0 ? " order-1 lg:order-2" : " order-1 lg:order-1"
-              }`}
-            >
-              <img
-                src={d?.img}
-                alt="project"
-                className="object-contain w-full h-full"
-              />
-              {state.customCursor && (
+              <figure className={`p-2 lg:p-0 relative w-full h-full`}>
+                <img
+                  src={d?.img}
+                  alt="project"
+                  className="object-contain w-full h-full"
+                />
+                {/* {state.customCursor && (
                 <div className="hidden lg:block cursor-none">
                   <div
                     className="border-[1px] border-[#989898] bg-[#fff]/20 backdrop-blur-xl duration-300 fixed text-base 
@@ -110,9 +102,40 @@ const MyProject = ({ whiteMode }) => {
                     View <br /> project
                   </div>
                 </div>
-              )}
-            </figure>
-          </section>
+              )} */}
+              </figure>
+            </section>
+            {/* mobile */}
+            <section
+              key={i}
+              className={`lg:hidden flex flex-col rounded-xl w-[95%] my-4  mx-auto cursor-pointer bg-gray-100 p-2`}
+              onClick={() => {
+                navigate(`/project-details/${d?.slug}`);
+              }}
+            >
+              <figure className={`p-2  w-full h-full`}>
+                <img
+                  src={d?.img}
+                  alt="project"
+                  className="object-contain w-full h-full"
+                />
+              </figure>
+              <section className={`flex items-center justify-center flex-col`}>
+                <p
+                  className={`mb-2 py-1 font-caveat font-semibold rounded-[30px] w-fit text-lg sm:text-xl text-[#ffd859] `}
+                >
+                  {d?.type}
+                </p>
+                <h3 className={`py-1 font-bold !text-2xl`}>{d?.title}</h3>
+                <p
+                  className={`py-1 text-sm md:text-base w-full text-gray-700 text-center whitespace-pre-line
+                `}
+                >
+                  {d?.description}
+                </p>
+              </section>
+            </section>
+          </>
         );
       })}
     </Container>

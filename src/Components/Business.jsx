@@ -20,64 +20,114 @@ const Business = ({ whiteMode }) => {
       <ScrollToTopOfPage />
 
       <Container whiteMode={whiteMode} inner="my-16 lg:my-28">
-        <section className="grid !mb-32 md:!mb-96 lg:!mb-0 py-10 grid-cols-1 grid-rows-auto lg:grid-cols-[30%_33%_33%] gap-[2%]  lg:grid-rows-[450px_350px_400px]">
+        <section className="grid !mb-0 py-10 grid-cols-1 grid-rows-auto lg:grid-cols-[30%_33%_33%] lg:gap-[2%]  lg:grid-rows-[450px_350px_400px]">
           {businessImages?.map((d, i) => {
             return (
-              <figure
-                className={`cursor-pointer relative w-full ${arrangement[i]}`}
-                key={i}
-                onMouseEnter={() => {
-                  setState((prev) => {
-                    return { ...prev, selectedData: d };
-                  });
-                }}
-                onMouseLeave={() => {
-                  setState((prev) => {
-                    return { ...prev, selectedData: {} };
-                  });
-                }}
-              >
-                {d?.image ? (
-                  <img
-                    src={d?.image}
-                    alt="pic"
-                    className={`${
-                      state.selectedData?.id === d?.id && d?.heading
-                        ? "opacity-70"
-                        : ""
-                    } object-contain lg:object-cover w-full h-full rounded-xl`}
-                  />
-                ) : (
-                  <figcaption className="h-full w-full flex flex-col items-start justify-center p-2">
-                    <p
-                      className={`text-4xl font-semibold py-3 text-left ${
-                        whiteMode ? "text-[#101010]" : "text-[#fff]"
-                      }`}
-                    >
-                      {d?.name}
-                    </p>
-                    <p
-                      className={`text-xl py-3 ${
-                        whiteMode ? "text-[#101010]" : "text-[#c1c1c1]"
-                      }`}
-                    >
-                      {d?.description}
-                    </p>
-                  </figcaption>
-                )}
-                {state.selectedData?.id === d?.id &&
-                  state.selectedData?.heading && (
-                    <p className="bg-gradient-to-t from-black to-transparent duration-500 px-4 absolute flex flex-col bottom-0 w-full py-4 font-bold">
-                      <span className="py-1 text-sm lg:text-xl bg-gradient-to-r from-pink-500  to-orange-300 bg-clip-text text-transparent">
-                        {d?.heading}
-                      </span>
-
-                      <span className="py-1 text-xl lg:text-2xl text-[#fff]">
-                        {d?.subHeading}
-                      </span>
-                    </p>
+              <>
+                {/* web */}
+                <figure
+                  className={`hidden lg:block cursor-pointer relative w-full ${arrangement[i]}`}
+                  key={i}
+                  onMouseEnter={() => {
+                    setState((prev) => {
+                      return { ...prev, selectedData: d };
+                    });
+                  }}
+                  onMouseLeave={() => {
+                    setState((prev) => {
+                      return { ...prev, selectedData: {} };
+                    });
+                  }}
+                >
+                  {d?.image ? (
+                    <img
+                      src={d?.image}
+                      alt="pic"
+                      className={`${
+                        state.selectedData?.id === d?.id && d?.heading
+                          ? "opacity-70"
+                          : ""
+                      } object-contain lg:object-cover w-full h-full rounded-xl`}
+                    />
+                  ) : (
+                    <figcaption className="h-full w-full flex flex-col items-start justify-center p-2">
+                      <p
+                        className={`text-4xl font-semibold py-3 text-left ${
+                          whiteMode ? "text-[#101010]" : "text-[#fff]"
+                        }`}
+                      >
+                        {d?.name}
+                      </p>
+                      <p
+                        className={`text-xl py-3 ${
+                          whiteMode ? "text-[#101010]" : "text-[#c1c1c1]"
+                        }`}
+                      >
+                        {d?.description}
+                      </p>
+                    </figcaption>
                   )}
-              </figure>
+                  {state.selectedData?.id === d?.id &&
+                    state.selectedData?.heading && (
+                      <p className="rounded-xl bg-gradient-to-t from-black to-transparent duration-500 px-4 absolute flex flex-col bottom-0 w-full py-4 font-bold">
+                        <span className="py-1 text-sm lg:text-xl bg-gradient-to-r from-pink-500  to-orange-300 bg-clip-text text-transparent">
+                          {d?.heading}
+                        </span>
+
+                        <span className="py-1 text-xl lg:text-2xl text-[#fff]">
+                          {d?.subHeading}
+                        </span>
+                      </p>
+                    )}
+                </figure>
+                {/* mobile */}
+                <section
+                  key={i}
+                  className={`lg:hidden flex flex-col rounded-xl w-full my-4 bg-gray-100 p-2`}
+                >
+                  <figure className={`w-full h-full`}>
+                    {d?.image ? (
+                      <img
+                        src={d?.image}
+                        alt="pic"
+                        className={` object-contain lg:object-cover w-full h-full rounded-xl`}
+                      />
+                    ) : (
+                      <figcaption className="h-full w-full flex flex-col items-start justify-center p-2">
+                        <p
+                          className={`text-4xl font-semibold py-3 text-left ${
+                            whiteMode ? "text-[#101010]" : "text-[#fff]"
+                          }`}
+                        >
+                          {d?.name}
+                        </p>
+                        <p
+                          className={`text-xl py-3 ${
+                            whiteMode ? "text-[#101010]" : "text-[#c1c1c1]"
+                          }`}
+                        >
+                          {d?.description}
+                        </p>
+                      </figcaption>
+                    )}
+                  </figure>
+                  {d?.heading && (
+                    <section
+                      className={`flex items-center justify-center flex-col`}
+                    >
+                      <h3 className={`py-1 font-bold !text-2xl text-center`}>
+                        {d?.heading}
+                      </h3>
+                      <p
+                        className={`py-1 text-sm md:text-base w-full text-gray-700 text-center whitespace-pre-line
+                `}
+                      >
+                        {d?.subHeading}
+                      </p>
+                    </section>
+                  )}
+                </section>
+              </>
             );
           })}
         </section>

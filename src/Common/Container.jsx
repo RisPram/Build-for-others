@@ -1,4 +1,4 @@
-const Container = ({ whiteMode, outer, inner, children, style }) => {
+const Container = ({ whiteMode, outer, inner, children, style, segment }) => {
   return (
     <section
       className={`relative w-full flex items-center justify-center bg-cover bg-center   ${

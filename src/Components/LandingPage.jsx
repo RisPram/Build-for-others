@@ -35,19 +35,12 @@ const LandingPage = ({ whiteMode }) => {
     <>
       <ScrollToTopOfPage />
       <Container
+        segment="landingPage"
         whiteMode={whiteMode}
         outer="p-6 mt-10 lg:mt-32"
         inner="my-8 lg:my-20 items-center"
-        style={{ backgroundImage: `url(${bgEffectA})` }}
-        // hide
-        // it
-        // at
-        // responsive
-        // and
-        // activate
-        // it
-        // in
-        // web
+        // style={{ backgroundImage: `url(${bgEffectA})` }}
+        // hide it on web and activate when responsive
       >
         <section
           className={`grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-14 my-4`}

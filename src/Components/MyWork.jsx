@@ -20,7 +20,7 @@ const MyProject = ({ whiteMode }) => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
   return (
-    <Container whiteMode={whiteMode} inner="py-10 lg:py-20">
+    <Container whiteMode={whiteMode} inner="py-10 lg:py-18">
       <h2
         className={`block lg:hidden mb-4 text-center font-semibold !text-3xl underline`}
       >
@@ -32,7 +32,7 @@ const MyProject = ({ whiteMode }) => {
             {/* web */}
             <section
               key={i}
-              className={`hidden lg:block w-[90%] xl:w-[80%] my-8 lg:my-14 mx-auto relative cursor-pointer`}
+              className={`hidden lg:block w-full my-8 lg:my-14 mx-auto relative cursor-pointer`}
               // onMouseEnter={() => {
               //   setState((prev) => {
               //     return { ...prev, customCursor: true };
@@ -122,11 +122,13 @@ const MyProject = ({ whiteMode }) => {
               </figure>
               <section className={`flex items-center justify-center flex-col`}>
                 <p
-                  className={`mb-2 py-1 font-caveat font-semibold rounded-[30px] w-fit text-lg sm:text-xl text-[#ffd859] `}
+                  className={`text-center mb-2 py-1 font-caveat font-semibold rounded-[30px] w-fit text-lg sm:text-xl text-[#ffd859] `}
                 >
                   {d?.type}
                 </p>
-                <h3 className={`py-1 font-bold !text-2xl`}>{d?.title}</h3>
+                <h3 className={`py-1 font-bold !text-2xl text-center`}>
+                  {d?.title}
+                </h3>
                 <p
                   className={`py-1 text-sm md:text-base w-full text-gray-700 text-center whitespace-pre-line
                 `}

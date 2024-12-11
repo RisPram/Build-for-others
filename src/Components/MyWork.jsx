@@ -32,7 +32,7 @@ const MyProject = ({ whiteMode }) => {
             {/* web */}
             <section
               key={i}
-              className={`hidden lg:block w-full my-8 lg:my-14 mx-auto relative cursor-pointer`}
+              className={`hidden lg:block w-full my-8 lg:my-14 mx-auto relative cursor-pointer h-[555px] rounded-xl`}
               // onMouseEnter={() => {
               //   setState((prev) => {
               //     return { ...prev, customCursor: true };
@@ -83,7 +83,7 @@ const MyProject = ({ whiteMode }) => {
                 <img
                   src={d?.img}
                   alt="project"
-                  className="object-contain w-full h-full"
+                  className="object-fill w-full h-full"
                 />
                 {/* {state.customCursor && (
                 <div className="hidden lg:block cursor-none">

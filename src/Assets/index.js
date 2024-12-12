@@ -30,7 +30,7 @@ import homepageC from "./images/AboutMe/ResearchandDevelopment.png";
 import bgEffectA from "./images/AboutMe/bgEffect.png";
 // resume
 import resume from "../Assets/samplepdf.pdf";
-
+import downloadVideo from "../Assets/dummyvideo.mp4";
 export {
   bgEffectA,
   hamburger,
@@ -57,4 +57,5 @@ export {
   homepageB,
   homepageC,
   resume,
+  downloadVideo,
 };

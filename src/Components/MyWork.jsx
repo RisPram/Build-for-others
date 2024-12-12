@@ -79,48 +79,59 @@ const MyProject = ({ whiteMode }) => {
               </p> */}
               </section>
 
-              <figure className={`p-2 lg:p-0 relative w-full h-full`}>
+              <section className="p-2 w-full h-full">
+                <video
+                  loop
+                  muted
+                  autoPlay
+                  preload="metadata"
+                  className="lg:p-0 relative w-full h-full rounded-lg object-cover"
+                  aria-label={`Video for project ${d?.title}`}
+                >
+                  <source src={d?.video} type="video/mp4" />
+                </video>
+              </section>
+
+              {/* <figure className={`p-2 lg:p-0 relative w-full h-full`}>
                 <img
                   src={d?.img}
                   alt="project"
                   className="object-fill w-full h-full"
                 />
-                {/* {state.customCursor && (
-                <div className="hidden lg:block cursor-none">
-                  <div
-                    className="border-[1px] border-[#989898] bg-[#fff]/20 backdrop-blur-xl duration-300 fixed text-base 
-                  rounded-full p-7 text-center text-black font-semibold"
-                    style={{
-                      left: `${state.position.x}px`,
-                      top: `${state.position.y}px`,
-                      transform: `translate(-50%, -50%)`,
-                    }}
-                    onClick={() => {
-                      navigate(`/project-details/${d?.slug}`);
-                    }}
-                  >
-                    View <br /> project
-                  </div>
-                </div>
-              )} */}
-              </figure>
+               
+            
+              </figure> */}
             </section>
             {/* mobile */}
             <section
               key={i}
-              className={`lg:hidden flex flex-col rounded-xl w-[95%] my-4  mx-auto cursor-pointer bg-gray-100 p-2`}
+              className={`lg:hidden flex flex-col rounded-xl w-[95%] my-4  mx-auto cursor-pointer bg-gray-100 `}
               onClick={() => {
                 navigate(`/project-details/${d?.slug}`);
               }}
             >
-              <figure className={`p-2  w-full h-full`}>
+              {/* <figure className={`p-2  w-full h-full`}>
                 <img
                   src={d?.img}
                   alt="project"
                   className="object-contain w-full h-full"
                 />
-              </figure>
-              <section className={`flex items-center justify-center flex-col`}>
+              </figure> */}
+              <section className="w-full h-full">
+                <video
+                  loop
+                  muted
+                  autoPlay
+                  preload="metadata"
+                  className="lg:p-0 relative w-full h-full rounded-t-lg object-cover"
+                  aria-label={`Video for project ${d?.title}`}
+                >
+                  <source src={d?.video} type="video/mp4" />
+                </video>
+              </section>
+              <section
+                className={`flex items-center justify-center flex-col p-2`}
+              >
                 <p
                   className={`text-center mb-2 py-1 font-caveat font-semibold rounded-[30px] w-fit text-lg sm:text-xl text-[#ffd859] `}
                 >

@@ -12,6 +12,7 @@ import {
   bsideC,
   bsideD,
   bsideE,
+  downloadVideo,
 } from "../Assets";
 export const menu = [
   {
@@ -91,6 +92,7 @@ export const myProject = [
     type: "Mobile App & Web Design",
     title: "Gift Card",
     img: myProject1,
+    video: downloadVideo,
     description:
       "Buy gift cards of most popular brands like flipkart, amazon, myntra and many more. Get gift card number and redeem at the store/brand to get up to 100% cashback and rewards.",
   },
@@ -99,6 +101,7 @@ export const myProject = [
     slug: "bsw",
     type: "Mobile App & Web Design",
     title: "Best Shopping Websites",
+    video: downloadVideo,
     img: myProject2,
     description:
       "Buy gift cards of most popular brands like flipkart, amazon, myntra and many more. Get gift card number and redeem at the store/brand to get up to 100% cashback and rewards.",
@@ -108,6 +111,7 @@ export const myProject = [
     slug: "vendor",
     type: "Mobile App",
     title: "Vendor",
+    video: downloadVideo,
     img: myProject3,
     description:
       "- GG Vendor & experience new growth in your Business.\n - Get your own personal Salesman at zero upfront cost and pay on real sales only",
@@ -117,6 +121,7 @@ export const myProject = [
     slug: "franchise360",
     type: "Web Design",
     title: "Franchise 360",
+    video: downloadVideo,
     img: myProject4,
     description: "Digital Franchise System",
   },

@@ -36,54 +36,54 @@ export const menu = [
     download: resume,
   },
 ];
-export const skills = [
-  {
-    id: "skill1",
-    name: "Adobe XD",
-  },
-  {
-    id: "skill2",
-    name: "Figma",
-  },
+// export const skills = [
+//   {
+//     id: "skill1",
+//     name: "Adobe XD",
+//   },
+//   {
+//     id: "skill2",
+//     name: "Figma",
+//   },
 
-  {
-    id: "skill3",
-    name: "Mobile App Design",
-  },
+//   {
+//     id: "skill3",
+//     name: "Mobile App Design",
+//   },
 
-  {
-    id: "skill4",
-    name: "Web Design",
-  },
+//   {
+//     id: "skill4",
+//     name: "Web Design",
+//   },
 
-  {
-    id: "skill5",
-    name: "Wireframe",
-  },
-  {
-    id: "skill6",
-    name: "Prototype",
-  },
+//   {
+//     id: "skill5",
+//     name: "Wireframe",
+//   },
+//   {
+//     id: "skill6",
+//     name: "Prototype",
+//   },
 
-  {
-    id: "skill7",
-    name: "User Research",
-  },
+//   {
+//     id: "skill7",
+//     name: "User Research",
+//   },
 
-  {
-    id: "skill8",
-    name: "Adobe Illustrator",
-  },
+//   {
+//     id: "skill8",
+//     name: "Adobe Illustrator",
+//   },
 
-  {
-    id: "skill9",
-    name: "User Interface",
-  },
-  {
-    id: "skill10",
-    name: "User Experience",
-  },
-];
+//   {
+//     id: "skill9",
+//     name: "User Interface",
+//   },
+//   {
+//     id: "skill10",
+//     name: "User Experience",
+//   },
+// ];
 
 export const myProject = [
   {

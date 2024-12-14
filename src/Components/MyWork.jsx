@@ -32,7 +32,7 @@ const MyProject = ({ whiteMode }) => {
             {/* web */}
             <section
               key={i}
-              className={`hidden lg:block w-full my-8 lg:my-14 mx-auto relative cursor-pointer h-[555px] rounded-xl`}
+              className={`hidden lg:block w-full my-8 lg:my-14 mx-auto relative cursor-pointer lg:h-[450px] xl:h-[555px] rounded-[28px]`}
               // onMouseEnter={() => {
               //   setState((prev) => {
               //     return { ...prev, customCursor: true };
@@ -43,40 +43,40 @@ const MyProject = ({ whiteMode }) => {
               //     return { ...prev, customCursor: false };
               //   });
               // }}
-              onClick={() => {
-                navigate(`/project-details/${d?.slug}`);
-              }}
+              // onClick={() => {
+              //   navigate(`/project-details/${d?.slug}`);
+              // }}
             >
               <section
-                className={`absolute left-14 xl:left-20 top-1/2 -translate-y-1/2 flex items-start justify-center flex-col z-50`}
+                className={`w-full absolute left-14 xl:left-20 top-1/2 -translate-y-1/2 flex items-start justify-center flex-col z-50`}
               >
                 <p
-                  className={`mb-2 py-1 font-caveat font-semibold rounded-[30px] w-fit text-lg sm:text-xl text-[#ffd859] `}
+                  className={`mb-2 py-1 font-caveat font-semibold rounded-[30px] w-fit text-xl sm:text-xl text-[#ffd859] `}
                 >
                   {d?.type}
                 </p>
                 <h3
-                  className={`py-1.5 font-bold !text-2xl lg:!text-3xl text-[#fff]`}
+                  className={`py-1.5 font-bold !text-3xl lg:!text-4xl text-[#fff]`}
                 >
                   {d?.title}
                 </h3>
                 <p
-                  className={`py-1.5 text-sm md:text-base w-full lg:w-[60%] text-[#D1D1D1]
+                  className={`py-1.5 text-lg md:text-base w-full lg:w-[40%] text-[#D1D1D1] whitespace-pre-line
                 `}
                 >
                   {d?.description}
                 </p>
-                {/* <p
-                className={`py-1.5 flex items-start justify-center text-lg cursor-pointer group text-[#D1D1D1]`}
-                onClick={() => {
-                  navigate(`/project-details/${d?.slug}`);
-                }}
-              >
-                <span className="group-hover:underline font-semibold">
-                  See My Work
-                </span>
-                <img src={iconLink} alt="link" className="ml-2 w-8 h-8" />
-              </p> */}
+                <p
+                  className={`py-1.5 flex items-start justify-center text-lg cursor-pointer group text-[#D1D1D1]`}
+                  onClick={() => {
+                    navigate(`/project-details/${d?.slug}`);
+                  }}
+                >
+                  <span className="group-hover:underline font-semibold">
+                    View Project
+                  </span>
+                  {/* <img src={iconLink} alt="link" className="ml-2 w-8 h-8" /> */}
+                </p>
               </section>
 
               <section className="p-2 w-full h-full">
@@ -85,7 +85,7 @@ const MyProject = ({ whiteMode }) => {
                   muted
                   autoPlay
                   preload="metadata"
-                  className="lg:p-0 relative w-full h-full rounded-lg object-cover"
+                  className="lg:p-0 relative w-full h-full rounded-[28px] object-cover"
                   aria-label={`Video for project ${d?.title}`}
                 >
                   <source src={d?.video} type="video/mp4" />
@@ -105,7 +105,7 @@ const MyProject = ({ whiteMode }) => {
             {/* mobile */}
             <section
               key={i}
-              className={`lg:hidden flex flex-col rounded-xl w-[95%] my-4  mx-auto cursor-pointer bg-gray-100 `}
+              className={`lg:hidden flex flex-col rounded-[28px] w-[95%] my-4  mx-auto cursor-pointer bg-gray-100 `}
               onClick={() => {
                 navigate(`/project-details/${d?.slug}`);
               }}
@@ -123,14 +123,14 @@ const MyProject = ({ whiteMode }) => {
                   muted
                   autoPlay
                   preload="metadata"
-                  className="lg:p-0 relative w-full h-full rounded-t-lg object-cover"
+                  className="lg:p-0 relative w-full h-[250px] rounded-t-[28px] object-cover"
                   aria-label={`Video for project ${d?.title}`}
                 >
                   <source src={d?.video} type="video/mp4" />
                 </video>
               </section>
               <section
-                className={`flex items-center justify-center flex-col p-2`}
+                className={`flex items-center justify-center flex-col px-2 pt-2 pb-4`}
               >
                 <p
                   className={`text-center mb-2 py-1 font-caveat font-semibold rounded-[30px] w-fit text-lg sm:text-xl text-[#ffd859] `}
@@ -141,7 +141,7 @@ const MyProject = ({ whiteMode }) => {
                   {d?.title}
                 </h3>
                 <p
-                  className={`py-1 text-sm md:text-base w-full text-gray-700 text-center whitespace-pre-line
+                  className={`py-1 px-2 text-sm md:text-base w-full text-gray-700 text-center whitespace-pre-line
                 `}
                 >
                   {d?.description}

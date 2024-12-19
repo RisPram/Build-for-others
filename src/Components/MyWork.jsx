@@ -21,18 +21,18 @@ const MyProject = ({ whiteMode }) => {
   }, []);
   return (
     <Container whiteMode={whiteMode} inner="py-10 lg:py-18">
-      <h2
+      {/* <h2
         className={`block lg:hidden mb-4 text-center font-semibold !text-3xl underline`}
       >
         My Contributions
-      </h2>
+      </h2> */}
       {myProject?.map((d, i) => {
         return (
           <>
             {/* web */}
             <section
               key={i}
-              className={`hidden lg:block w-full my-8 lg:my-14 mx-auto relative cursor-pointer lg:h-[450px] xl:h-[555px] rounded-[28px]`}
+              className={`hidden lg:block w-full my-8 lg:my-14 mx-auto relative cursor-pointer lg:h-[450px] xl:h-[700px] rounded-[28px]`}
               // onMouseEnter={() => {
               //   setState((prev) => {
               //     return { ...prev, customCursor: true };
@@ -48,7 +48,9 @@ const MyProject = ({ whiteMode }) => {
               // }}
             >
               <section
-                className={`w-full absolute left-14 xl:left-20 top-1/2 -translate-y-1/2 flex items-start justify-center flex-col z-50`}
+                className={`
+                  
+                  w-full absolute left-14 xl:left-20 top-1/2 -translate-y-1/2 flex items-start justify-center flex-col z-40`}
               >
                 <p
                   className={`mb-2 py-1 font-caveat font-semibold rounded-[30px] w-fit text-xl sm:text-xl text-[#ffd859] `}
@@ -56,18 +58,18 @@ const MyProject = ({ whiteMode }) => {
                   {d?.type}
                 </p>
                 <h3
-                  className={`py-1.5 font-bold !text-3xl lg:!text-4xl text-[#fff]`}
+                  className={`py-1.5 font-bold !text-3xl lg:!text-5xl text-[#fff]`}
                 >
                   {d?.title}
                 </h3>
                 <p
-                  className={`py-1.5 text-lg md:text-base w-full lg:w-[40%] text-[#D1D1D1] whitespace-pre-line
+                  className={`py-1.5 mt-2 text-lg md:text-lg w-full lg:w-[40%] text-[#D1D1D1] whitespace-pre-line
                 `}
                 >
                   {d?.description}
                 </p>
                 <p
-                  className={`py-1.5 flex items-start justify-center text-lg cursor-pointer group text-[#D1D1D1]`}
+                  className={`py-1.5 mt-2 flex items-start justify-center text-lg cursor-pointer group text-[#D1D1D1]`}
                   onClick={() => {
                     navigate(`/project-details/${d?.slug}`);
                   }}
@@ -79,7 +81,8 @@ const MyProject = ({ whiteMode }) => {
                 </p>
               </section>
 
-              <section className="p-2 w-full h-full">
+              {/* <section className="z-50 bg-gradient-to-r from-black to-transparent duration-500 relative w-full h-full"></section> */}
+              <section className="p-2 w-full h-full ">
                 <video
                   loop
                   muted
@@ -130,7 +133,7 @@ const MyProject = ({ whiteMode }) => {
                 </video>
               </section>
               <section
-                className={`flex items-center justify-center flex-col px-2 pt-2 pb-4`}
+                className={`flex items-center justify-center flex-col p-5`}
               >
                 <p
                   className={`text-center mb-2 py-1 font-caveat font-semibold rounded-[30px] w-fit text-lg sm:text-xl text-[#ffd859] `}
@@ -144,7 +147,7 @@ const MyProject = ({ whiteMode }) => {
                   className={`py-1 px-2 text-sm md:text-base w-full text-gray-700 text-center whitespace-pre-line
                 `}
                 >
-                  {d?.description}
+                  {d?.description?.slice(0, 55)}...
                 </p>
               </section>
             </section>

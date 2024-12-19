@@ -114,7 +114,7 @@ export const myProject = [
     video: downloadVideo,
     img: myProject3,
     description:
-      "- GG Vendor & experience new growth in your Business.\n - Get your own personal Salesman at zero upfront cost and pay on real sales only",
+      "GG Vendor & experience new growth in your Business. Get your own personal Salesman at zero upfront cost and pay on real sales only",
   },
   {
     id: "mpr4",

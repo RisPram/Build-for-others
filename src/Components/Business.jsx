@@ -19,7 +19,7 @@ const Business = ({ whiteMode }) => {
     <>
       <ScrollToTopOfPage />
 
-      <Container whiteMode={whiteMode} inner="my-16 lg:my-28">
+      <Container whiteMode={whiteMode} inner="my-16 lg:my-44">
         <section className="grid !mb-0 py-10 grid-cols-1 grid-rows-auto lg:grid-cols-[30%_33%_33%] lg:gap-[2%]  lg:grid-rows-[450px_350px_400px]">
           {businessImages?.map((d, i) => {
             return (
@@ -47,12 +47,12 @@ const Business = ({ whiteMode }) => {
                         state.selectedData?.id === d?.id && d?.heading
                           ? "opacity-70"
                           : ""
-                      } object-contain lg:object-cover w-full h-full rounded-xl`}
+                      } object-contain lg:object-cover w-full h-full rounded-[28px]`}
                     />
                   ) : (
-                    <figcaption className="h-full w-full flex flex-col items-start justify-center p-2">
+                    <figcaption className=" p-8 h-full w-full flex flex-col items-start justify-center">
                       <p
-                        className={`text-4xl font-semibold py-3 text-left ${
+                        className={`text-5xl font-semibold py-3 text-left ${
                           whiteMode ? "text-[#101010]" : "text-[#fff]"
                         }`}
                       >
@@ -69,7 +69,7 @@ const Business = ({ whiteMode }) => {
                   )}
                   {state.selectedData?.id === d?.id &&
                     state.selectedData?.heading && (
-                      <p className="rounded-xl bg-gradient-to-t from-black to-transparent duration-500 px-4 absolute flex flex-col bottom-0 w-full py-4 font-bold">
+                      <p className="rounded-[28px] bg-gradient-to-t from-black to-transparent duration-500 p-8 absolute flex flex-col bottom-0 w-full font-bold">
                         <span className="py-1 text-sm lg:text-xl bg-gradient-to-r from-pink-500  to-orange-300 bg-clip-text text-transparent">
                           {d?.heading}
                         </span>
@@ -83,26 +83,30 @@ const Business = ({ whiteMode }) => {
                 {/* mobile */}
                 <section
                   key={i}
-                  className={`lg:hidden flex flex-col rounded-xl w-full my-4 bg-gray-100 p-2`}
+                  className={`lg:hidden flex flex-col rounded-[28px] w-full my-4 bg-gray-100 ${arrangement[i]}`}
                 >
-                  <figure className={`w-full h-full`}>
+                  <figure className={`w-full h-full `}>
                     {d?.image ? (
                       <img
                         src={d?.image}
                         alt="pic"
-                        className={` object-contain lg:object-cover w-full h-full rounded-xl`}
+                        className={`object-contain lg:object-cover w-full h-full
+                          ${d?.heading ? "" : ""}
+                          `}
                       />
                     ) : (
-                      <figcaption className="h-full w-full flex flex-col items-start justify-center p-2">
+                      <figcaption
+                        className={`h-full w-full flex flex-col items-start justify-center p-6 md:p-2`}
+                      >
                         <p
-                          className={`text-4xl font-semibold py-3 text-left ${
+                          className={`text-3xl md:text-4xl font-semibold py-1 md:py-3 text-left ${
                             whiteMode ? "text-[#101010]" : "text-[#fff]"
                           }`}
                         >
                           {d?.name}
                         </p>
                         <p
-                          className={`text-xl py-3 ${
+                          className={`text-base md:text-xl py-3 ${
                             whiteMode ? "text-[#101010]" : "text-[#c1c1c1]"
                           }`}
                         >
@@ -113,7 +117,7 @@ const Business = ({ whiteMode }) => {
                   </figure>
                   {d?.heading && (
                     <section
-                      className={`flex items-center justify-center flex-col`}
+                      className={`flex items-center justify-center flex-col p-4`}
                     >
                       <h3 className={`py-1 font-bold !text-2xl text-center`}>
                         {d?.heading}

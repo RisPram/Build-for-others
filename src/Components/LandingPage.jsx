@@ -7,7 +7,7 @@ import {
   homepageC,
 } from "../Assets";
 import Container from "../Common/Container";
-import { skills } from "../Common/RealData";
+// import { skills } from "../Common/RealData";
 import ScrollToTopOfPage from "../Common/ScrollToTopOfPage";
 import MyProject from "./MyWork";
 const LandingPage = ({ whiteMode }) => {
@@ -42,43 +42,39 @@ const LandingPage = ({ whiteMode }) => {
         // style={{ backgroundImage: `url(${bgEffectA})` }}
         // hide it on web and activate when responsive
       >
-        <section
-          className={`grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-14 my-4`}
-        >
-          <section className="flex flex-col items-start justify-center">
-            <h2
-              className={`py-1 font-libre !text-lg md:!text-3xl ${
-                whiteMode ? "text-[#616161]" : "text-[#D1D1D1]"
-              }`}
-            >
-              Hi! I’m Jay Chovatiya.
-            </h2>
-            <h4 className="py-1 text-[#707070] font-libre !text-lg md:!text-2xl">
-              UI/UX Designer based in Ahmedabad
-            </h4>
-            <p
-              className={`py-5 text-4xl lg:text-5xl !leading-snug ${
-                whiteMode ? "text-black" : "text-[#fff]"
-              } font-semibold`}
-            >
-              Simplifying tough problems to make accessible solutions with
-            </p>
-            <figure className="w-full rounded-lg py-1 h-[100px] duration-200">
-              <img
-                src={state?.image}
-                alt="change"
-                className="w-full h-full object-contain"
-              />
-            </figure>
-          </section>
-          <figure className="w-full flex items-center justify-center lg:justify-end rounded-lg">
+        <section className=" my-4 flex flex-col items-center justify-center">
+          <h2
+            className={`py-1 font-libre !text-lg md:!text-3xl text-center ${
+              whiteMode ? "text-[#616161]" : "text-[#D1D1D1]"
+            }`}
+          >
+            Hi! I’m Jay Chovatiya
+          </h2>
+          <h4 className="py-1 text-[#707070] font-libre !text-sm md:!text-2xl text-center">
+            UI/UX Designer based in Ahmedabad
+          </h4>
+          <p
+            className={`w-[80%] py-5 text-3xl md:text-6xl !leading-snug text-center ${
+              whiteMode ? "text-black" : "text-[#fff]"
+            } font-semibold`}
+          >
+            Simplifying tough problems to make accessible solutions with
+          </p>
+          {/* <figure className="w-full rounded-lg py-1 h-[100px] duration-200">
+            <img
+              src={state?.image}
+              alt="change"
+              className="w-full h-full object-contain"
+            />
+          </figure> */}
+        </section>
+        {/* <figure className="w-full flex items-center justify-center lg:justify-end rounded-lg">
             <img
               src={personPhoto}
               alt="person"
               className="object-contain w-[100%] h-full lg:h-[450px] rounded-lg"
             />
-          </figure>
-        </section>
+          </figure> */}
       </Container>
 
       {/* skills */}

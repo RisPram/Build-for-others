@@ -67,7 +67,7 @@ const Header = ({ handleModeChange }) => {
        ${!state.mode ? "" : "bg-[#0c0c0ca3]"} duration-300`}
     >
       <section
-        className={`w-[90%] lg:w-[70%] flex flex-col bg-transparent ${
+        className={`w-[90%] lg:w-[40%] flex flex-col bg-transparent ${
           state.scrollPosition > 100 ? "items-center" : ""
         } `}
       >

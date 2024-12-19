@@ -91,7 +91,11 @@ const Business = ({ whiteMode }) => {
                         src={d?.image}
                         alt="pic"
                         className={`object-contain lg:object-cover w-full h-full
-                          ${d?.heading ? "" : ""}
+                          ${
+                            d?.heading
+                              ? "rounded-t-[28px] rounded-b-0"
+                              : "rounded-[28px]"
+                          }
                           `}
                       />
                     ) : (

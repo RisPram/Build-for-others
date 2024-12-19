@@ -81,8 +81,10 @@ const MyProject = ({ whiteMode }) => {
                 </p>
               </section>
 
-              {/* <section className="z-50 bg-gradient-to-r from-black to-transparent duration-500 relative w-full h-full"></section> */}
-              <section className="p-2 w-full h-full ">
+              <section className="z-30 h-full absolute  w-full rounded-[28px] p-2">
+                <section className=" h-full bg-gradient-to-r from-black to-transparent w-full rounded-[28px]"></section>
+              </section>
+              <section className="p-2 w-full h-full rounded-[28px] relative">
                 <video
                   loop
                   muted

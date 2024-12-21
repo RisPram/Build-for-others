@@ -88,7 +88,7 @@ const Header = ({ handleModeChange }) => {
           <figure
             className={`flex items-center ${
               state.scrollPosition > 100
-                ? "md:w-fit md:mr-3 md:animate-moveToCenterfromleft"
+                ? "md:w-fit md:mr-14 md:animate-moveToCenterfromleft"
                 : "md:w-[10%] md:animate-move-corner-left"
             }`}
           >

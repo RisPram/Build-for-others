@@ -43,9 +43,9 @@ const MyProject = ({ whiteMode }) => {
               //     return { ...prev, customCursor: false };
               //   });
               // }}
-              // onClick={() => {
-              //   navigate(`/project-details/${d?.slug}`);
-              // }}
+              onClick={() => {
+                navigate(`/project-details/${d?.slug}`);
+              }}
             >
               <section
                 className={`
@@ -70,9 +70,6 @@ const MyProject = ({ whiteMode }) => {
                 </p>
                 <p
                   className={`py-1.5 mt-2 flex items-start justify-center text-lg cursor-pointer group text-[#D1D1D1]`}
-                  onClick={() => {
-                    navigate(`/project-details/${d?.slug}`);
-                  }}
                 >
                   <span className="group-hover:underline font-semibold">
                     View Project

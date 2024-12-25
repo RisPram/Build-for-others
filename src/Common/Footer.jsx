@@ -66,7 +66,7 @@ const Footer = ({ whiteMode }) => {
         outer={`${whiteMode ? "bg-[#fff]" : "bg-[#101010]"}`}
       >
         <section
-          className={`flex flex-col md:flex-row md:justify-between items-center md:items-start text-sm md:text-xl py-4
+          className={`flex flex-col md:flex-row md:justify-between items-center md:items-start text-sm md:text-lg py-4
            ${whiteMode ? "text-[#707070]" : "text-[#C1C1C1] "}
             `}
         >

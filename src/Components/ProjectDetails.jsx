@@ -38,7 +38,7 @@ const ProjectDetails = ({ whiteMode }) => {
                 className="my-10 w-[90%] xl:w-[70%] flex flex-col items-center justify-center"
                 key={i}
               >
-                <figure className="w-full h-auto md:h-[560px] pb-0 lg:pb-6">
+                <figure className="w-full h-auto md:h-[580px] pb-0 lg:pb-6">
                   <img
                     src={d?.image}
                     className="object-contain lg:object-fill w-full h-full rounded-lg"
@@ -162,15 +162,15 @@ const ProjectDetails = ({ whiteMode }) => {
           More to explore
         </h2>
         {/* web */}
-        <section className="hidden lg:grid grid-cols-1 md:grid-cols-2  gap-10 mb-20">
-          {moreProjects?.slice(0, 2)?.map((d, i) => {
+        <section className="hidden lg:grid grid-cols-1 md:grid-cols-3  gap-10 mb-20">
+          {moreProjects?.slice(0, 3)?.map((d, i) => {
             return (
               <section className="flex flex-col items-start" key={i}>
                 <figure className={`w-full mb-3`}>
                   <img
                     src={d?.img}
                     alt="project"
-                    className="object-contain md:object-fill rounded-2xl w-full h-auto md:h-[400px]"
+                    className="object-contain md:object-fill rounded-2xl w-full h-auto md:h-[300px]"
                   />
                 </figure>
                 <p className="py-1.5 text-2xl text-[#e8ca42] font-caveat">

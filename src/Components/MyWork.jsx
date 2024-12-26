@@ -74,7 +74,7 @@ const MyProject = ({ whiteMode }) => {
                   <span className="group-hover:underline font-semibold">
                     View Project
                   </span>
-                  {/* <img src={iconLink} alt="link" className="ml-2 w-8 h-8" /> */}
+                  <img src={iconLink} alt="link" className="ml-2 w-8 h-8" />
                 </p>
               </section>
 

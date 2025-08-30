@@ -1,8 +1,10 @@
+import {lazy,Suspense} from "react"
 import { useRoutes } from "react-router-dom";
 import LandingPage from "./Components/LandingPage";
-import ProjectDetails from "./Components/ProjectDetails";
-import AboutMe from "./Components/AboutMe";
-import Business from "./Components/Business";
+
+const ProjectDetails =lazy(()=>import("./Components/ProjectDetails")) ;
+const AboutMe =lazy(()=>import("./Components/AboutMe"));
+const Business = lazy(()=>import("./Components/Business"))
 
 const AllRoutes = ({ whiteMode }) => {
   // console.log("in routes>", whiteMode);
@@ -13,15 +15,17 @@ const AllRoutes = ({ whiteMode }) => {
     },
     {
       path: "/project-details/:key",
-      element: <ProjectDetails whiteMode={whiteMode} />,
+      element: <Suspense fallback={<div>Loading..</div>}>
+        <ProjectDetails whiteMode={whiteMode} />
+      </Suspense>,
     },
     {
       path: "/about",
-      element: <AboutMe whiteMode={whiteMode} />,
+      element:<Suspense fallback={<div>Loading..</div>}><AboutMe whiteMode={whiteMode} /></Suspense> ,
     },
     {
       path: "/business",
-      element: <Business whiteMode={whiteMode} />,
+      element:<Suspense fallback={<div>Loading..</div>}><Business whiteMode={whiteMode} /></Suspense> ,
     },
 
     // {
